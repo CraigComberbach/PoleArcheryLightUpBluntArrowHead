@@ -1,0 +1,2374 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage[a4paper, left=2cm, top=2cm, right=2cm, bottom=2cm]{geometry}
+\usepackage[usenames,dvipsnames,table]{xcolor}
+\usepackage{ulem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{sectsty}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{lipsum}
+\usepackage{pdflscape}
+
+%Customize the document workspace
+%\setlength{\parindent}{0pt} 		%Turns off auto indentation for paragraphs
+\setcounter{tocdepth}{3}				%Limit the ToC to only show down to x.x.x
+\setcounter{secnumdepth}{5}			%Allow paragraphs and subparagraphs to continue enumerating where the sections left off
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\ProjectCodeName{}}
+\rhead{Document Rev \DocumentRevision}
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+\renewcommand*\contentsname{Table of Contents}
+\sectionfont{\color{cyan}}
+\subsectionfont{\color{cyan}}
+
+\usepackage{array}
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{C}[1]{>{\PreserveBackslash\centering}m{#1}}
+\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}m{#1}}
+\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}m{#1}}
+
+%These are formats specific to this document, each one conveys a different meaning
+\newcommand{\Untested}{\rowcolor{blue!65}} %Tests that have yet to be performed
+\newcommand{\TestPassed}{\rowcolor{OliveGreen}} %Tests that have passed their test
+\newcommand{\TestMarginal}{\rowcolor{BurntOrange}} %Tests that have barely failed their test
+\newcommand{\TestFailed}{\rowcolor{red}} %Tests that have failed their test
+\newcommand{\TestsUntested}[1]{\textcolor{blue!65}{\textbf{#1}}} %Collection of tests that have yet to be performed
+\newcommand{\TestsPassed}[1]{\textcolor{OliveGreen}{\textbf{#1}}} %Collection of tests that have all passed their tests
+\newcommand{\TestsMarginal}[1]{\textcolor{BurntOrange}{\textbf{#1}}} %Collection of tests that have at least one marginal failure
+\newcommand{\TestsFailed}[1]{\textcolor{red}{\textbf{#1}}} %Collection of tests that have at least one failed test
+
+\newcommand{\Oscillograph}[1]{\includegraphics[width=\linewidth,height=10cm,keepaspectratio]{#1}}
+\newcommand{\PictureOfTest}[1]{\Oscillograph{#1}}
+\newcommand{\TestResultsUsinglongtable}{
+	\setlength{\LTleft}{0pt}
+	\begin{longtable}{|C{0.04\linewidth} C{0.07\linewidth} L{0.20\linewidth} C{0.20\linewidth} C{0.40\linewidth}|}
+		\hline
+			Test ID & Test & Description And Test Setup & Pass Criteria & Results \\
+		\hline
+	\endfirsthead
+			\multicolumn{5}{c}{\textit{Continued from previous page}} \\
+		\hline
+			Test ID & Test & Description And Test Setup & Pass Criteria & Results \\
+	\endhead
+			\multicolumn{5}{r}{\textit{Continued on next page}} \\
+	\endfoot
+	\endlastfoot
+}
+\newcommand{\TimingDiagram}[2]{
+	\begin{center}
+		\begin{tabular}{l}
+			\textbf{#1} \\
+			\includegraphics[width=\linewidth,height=10cm,keepaspectratio]{#2} \\
+		\end{tabular}
+	\end{center}
+}
+
+%This allows for unique test IDs that follow the section/subsection numbering scheme
+\newcounter{myrownumber}[subsubsection]
+\newcommand{\UniqueTestID}{\stepcounter{myrownumber}\thesubsubsection.\arabic{myrownumber}}
+
+%These are items that are subject to change, whenever possible these should be used instead of the actual value so that it is easier to update the document
+\newcommand{\DocumentRevision}{0} %This is the current revision of this document, it should be updated during every release
+\newcommand{\BoardRevision}{0.0} %This is the current revision of the PCBA
+\newcommand{\ProjectCodeName}{DVT of PCBA MUA v\BoardRevision} %This is the project name
+\newcommand{\CompanyName}{Gradient Thermal Inc.} %This is the current name of the company
+\newcommand{\InformalCompanyName}{Gradient} %This is the informal name of the company
+
+%Start of the document proper
+\begin{document}
+	\thispagestyle{empty}	%Remove header/footer from this page only
+	\vspace*{\fill}			%Center the text from the top side
+	\begin{center}
+		\begin{tabular}{|l}
+			\textcolor{cyan}{\CompanyName{}} \\
+			\textcolor{cyan}{\Huge \ProjectCodeName{}} \\
+			\textcolor{cyan}{Rev \DocumentRevision}
+		\end{tabular}
+	\end{center}
+	\vspace*{\fill}		%Center the text from the bottom side
+	
+	\newpage
+	\tableofcontents
+
+	\newpage
+	\section{\TestsUntested{Formatting}}
+		This document is to be considered a living document during the lifespan of the project. The revision is listed prominently on the title page as well as in the header of every page that follows. A full revision history is kept at the end of the document for ease of reference.
+		
+		Tests are colour coded to indicate their status. A test that has passed will be highlighted in Green, a failed test in Red, a test that fails marginally and after discussing is agreed to be a pass will be marked marginal, and an incomplete test in Blue.
+		\begin{flushleft}
+			\begin{longtable}{|L{\linewidth}|}
+				\hline
+				\TestPassed This is an example of a \textbf{Passed} test \\
+				\hline
+				\TestMarginal This is an example of a \textbf{Marginal} test \\
+				\hline
+				\TestFailed This is an example of a \textbf{Failed} test \\
+				\hline
+				\Untested This is an example of an \textbf{Untested} test \\
+				\hline
+			\end{longtable}
+		\end{flushleft}
+
+	\section{\TestsUntested{Scope and Description}}
+		The \ProjectCodeName{} is meant to create confidence in the design by testing and recording the results of various SI (Signal Integrity), PDN (Power Distribution Network), Environmental, Mechanical, and other test paradigms. All designers at \InformalCompanyName{} will be able to refer to it if troubleshooting a unit or wanting to copy portions of the design to future projects.
+
+	%PDN - Power Distribution Network Test
+	\newpage
+	\begin{landscape}
+	\section{\TestsUntested{PDN Tests}}
+		\subsection{\TestsUntested{Power In}}
+			\subsubsection{\TestsUntested{24VAC Input}}
+			\subsubsection{\TestsUntested{120VAC Input}}
+		\subsection{\TestsUntested{Power Out}}
+			\subsubsection{\TestsUntested{24VAC Output}}
+			\subsubsection{\TestsUntested{24VAC Current Limited Output}}
+		\subsection{\TestsUntested{Power Rail}}
+			\subsubsection{\TestsUntested{24VDC Rail}}
+				\TestResultsUsinglongtable
+					\hline
+						\Untested \UniqueTestID &
+						Regulation at no load &
+						Ensure there is non-significant load on the powersupply.
+						
+						Using a voltmeter, measure the RMS voltage and ensure it is within tolerance.
+						Using an oscilloscope, measure the ripple peak to peak. &
+						\[Vrms \pm nmV\]
+						\[V_{Pk-Pk} < nmV\] &
+						\[V_{RMS} = V\]
+						\[V_{Pk-Pk} = V\]
+						\Oscillograph{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Regulation at full load &
+						Apply a load to the powersupply equal to its full rating.
+						
+						Using a voltmeter, measure the RMS voltage and ensure it is within tolerance.
+						
+						Using an oscilloscope, measure the ripple peak to peak. &
+						\[Vrms \pm nmV\]
+						\[V_{Pk-Pk} < nmV\] &
+						\[V_{RMS} = V\]
+						\[V_{Pk-Pk} = V\]
+						\Oscillograph{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						0-100\% Load Step Response &
+						Start the powersupply at no load or as close to a non-significant load as possible. Using an oscilloscope, measure the response time and regulation changes as you apply a full load to the powersupply &
+						\[t_{Recovery} < nms\]
+						\[\Delta V < nmV\]
+						\[V_{Max} < nV\]
+						\[V_{Min} < nV\] &
+						\[t_{Recovery} = nms\]
+						\[\Delta V = nmV\]
+						\[V_{Max} = nV\]
+						\[V_{Min} = nV\]
+						\Oscillograph{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						100-0\% Load Step Response &
+						Start the powersupply at full load.
+						
+						Using an oscilloscope, measure the response time and regulation changes as you transition to no-load or as non-significant of a load as possible &
+						\[t_{Recovery} < nms\]
+						\[\Delta V < nmV\]
+						\[V_{Max} < nV\]
+						\[V_{Min} < nV\] &
+						\[t_{Recovery} = nms\]
+						\[\Delta V = nmV\]
+						\[V_{Max} = nV\]
+						\[V_{Min} = nV\]
+						\Oscillograph{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Load at max regulation &
+						Starting at max-load, slowly increase the load on the powersupply until it falls outside of the designed tolerance or any component exceeds its maximum temperature rating.
+						
+						\textbf{Do not exceed a 1\% per Second ramp rate.}
+						
+						Using a voltmeter, measure the RMS voltage, stop the test when the RMS voltage is no longer within the specified tolerance.
+						
+						Using either an IR Camera or multiple thermocouples, measure the temperature of the IC, Inductor, and Capacitor, stop the test if the temperature of any of the components exceeds its rated temperature. &
+						\[Vrms \pm nmV\]
+						\[T_{IC} < n^{\circ}C\]
+						\[T_{Inductor} < n^{\circ}C\]
+						\[T_{Capacitor} < n^{\circ}C\] &
+						Test stopped due to: 
+						\[I_{Max} = A\]
+						\[T_{IC} = n^{\circ}C\]
+						\[T_{Inductor} = n^{\circ}C\]
+						\[T_{Capacitor} = n^{\circ}C\]
+						\Oscillograph{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Efficiency Curve &
+						Starting at no-load, wait 1-minute before measuring and recording the input voltage/current and the output voltage/current. Every minute afterwards, increase the load by 10\% and measure/record as before. Continue this schedule until the Max-Load is reached (previously measured). &
+						Measure/Record Input/Output Voltages/Currents and Efficiencies at 10\% increments &
+						\begin{tabular}{|c c c c c c|}
+							\hline
+								Load & \(V_{In}\) & \(I_{In}\) & \(V_{Out}\) & \(I_{Out}\) & Efficiency \\
+							\hline
+								0\% & n.nnnV & n.nnnA & n.nnnV & n.nnnA & \% \\
+							\hline
+								10\% & n.nnnV & n.nnnA & n.nnnV & n.nnnA & \% \\
+							\hline
+								20\% & n.nnnV & n.nnnA & n.nnnV & n.nnnA & \% \\
+							\hline
+								30\% & n.nnnV & n.nnnA & n.nnnV & n.nnnA & \% \\
+							\hline
+								40\% & n.nnnV & n.nnnA & n.nnnV & n.nnnA & \% \\
+							\hline
+								50\% & n.nnnV & n.nnnA & n.nnnV & n.nnnA & \% \\
+							\hline
+								60\% & n.nnnV & n.nnnA & n.nnnV & n.nnnA & \% \\
+							\hline
+								70\% & n.nnnV & n.nnnA & n.nnnV & n.nnnA & \% \\
+							\hline
+								80\% & n.nnnV & n.nnnA & n.nnnV & n.nnnA & \% \\
+							\hline
+								90\% & n.nnnV & n.nnnA & n.nnnV & n.nnnA & \% \\
+							\hline
+								100\% & n.nnnV & n.nnnA & n.nnnV & n.nnnA & \% \\
+							\hline
+								120\% & n.nnnV & n.nnnA & n.nnnV & n.nnnA & \% \\
+							\hline
+								130\% & n.nnnV & n.nnnA & n.nnnV & n.nnnA & \% \\
+							\hline
+								140\% & n.nnnV & n.nnnA & n.nnnV & n.nnnA & \% \\
+							\hline
+								150\% & n.nnnV & n.nnnA & n.nnnV & n.nnnA & \% \\
+							\hline
+						\end{tabular}
+						\Oscillograph{placeholder} \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsUntested{12VDC Rail}}
+			\subsubsection{\TestsUntested{5VDC Rail}}
+			\subsubsection{\TestsUntested{3.3VDC Rail}}
+		\subsection{\TestsUntested{Protection}}
+			\subsubsection{\TestsUntested{Voltage Supervisor}}
+			\subsubsection{\TestsUntested{24VDC Power Enable}}
+			\subsubsection{\TestsUntested{24VDC Powergood}}
+			\subsubsection{\TestsUntested{5VDC Powergood}}
+	
+	%SI - Signal Integrity
+	\newpage
+	\section{\TestsFailed{SI Tests}}
+		\subsection{\TestsMarginal{Analog Input}}
+			\subsubsection{\TestsPassed{ECM: Analog Tachometer}}
+				Used ECM Pump 1 Tachometer for the tests, 100 samples were taken and the mean/standard deviation were calculated
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of \(V_{Min}\) &
+						Short the input to ground. Ensure the controller reading is within tolerance.
+						
+						\(R_{In} = 0 \Omega \) &
+						\(0 <= Register <= 4\) &
+						\(Register = 1.61 \pm 0.49 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of \(1/3 V_{Max}\). &
+						Apply a voltage to the input. Ensure the controller reading is within tolerance. 
+						\(V_{In} = 3.3V \pm 1\%\) &
+						\(1025 <= Register <= 1130\) &
+						\(Register = 1070.00 \pm 0.32 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of \(2/3 V_{Max}\). &
+						Apply a voltage to the input. Ensure the controller reading is within tolerance. 
+						\(V_{In} = 6.6V \pm 1\%\) &
+						\(2055 <= Register <= 2256\) &
+						\(Register = 2139.04 \pm 0.40 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of \(V_{Max}\). &
+						Apply a voltage to the input. Ensure the controller reading is within tolerance. 
+						\(V_{In} = 10.0V \pm 1\%\) &
+						\(3116 <= Register <= 3416\) &
+						\(Register = 3240.73 \pm 0.49 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Over voltage detection. &
+						Apply a voltage to the input. Ensure the controller reading is within tolerance. 
+						\(V_{In} = 12.0V \pm 1\%\) &
+						\(3740 <= Register <= 4095\) &
+						\(Register = 3888.99 \pm 0.56 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Floating Input. &
+						Remove all external connections and impedances from the input &
+						Record register value &
+						\(Register = 2464.28 \pm 69.19 ticks \) \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsMarginal{Air Dampers: 0-10V Tachometer Input}}
+				Used Airdamper Tachometer 1 for the tests, 100 samples were taken and the mean/standard deviation were calculated
+				\TestResultsUsinglongtable
+					\hline
+						\TestMarginal \UniqueTestID &
+						Accurate reading of \(V_{Min}\) &
+						Short the input to ground. Ensure the controller reading is within tolerance.
+						
+						\(R_{In} = 0 \Omega \) &
+						\(0 <= Register <= 4\) &
+						\(Register = 5.25 \pm 0.44 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of \(1/3 V_{Max}\). &
+						Apply a voltage to the input. Ensure the controller reading is within tolerance. 
+						
+						\(V_{In} = 3.3V \pm 1\%\) &
+						\(1218 <= Register <= 1337 \) &
+						\(Register = 1273.07 \pm 0.38 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of \(2/3 V_{Max}\). &
+						Apply a voltage to the input. Ensure the controller reading is within tolerance. 
+						
+						\(V_{In} = 6.6V \pm 1\%\) &
+						\(2439 <= Register <= 2671\) &
+						\(Register = 2544.78 \pm 0.72 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of \(V_{Max}\). &
+						Apply a voltage to the input. Ensure the controller reading is within tolerance. 
+						
+						\(V_{In} = 10V \pm 1\%\) &
+						\(3698 <= Register <= 4045\) &
+						\(Register = 3855.45 \pm 1.09 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Over voltage detection. &
+						Apply a voltage to the input. Ensure the controller reading is within tolerance. 
+						
+						\(V_{In} = 10.2V \pm 1\%\) &
+						\(3772 <= Register <= 4095\) &
+						\(Register = 3932.41 \pm 0.94 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Floating Input. &
+						Remove all external connections and impedances from the input
+						
+						\(R_{In} = \infty \Omega \) &
+						Record register value &
+						\(Register = 7.81 \pm 0.39 ticks \) \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsMarginal{Grundfos: 0-5V Input}}
+				Used Grundfos 1 Flow for the tests, 100 samples were taken and the mean/standard deviation were calculated
+				\TestResultsUsinglongtable
+					\hline
+						\TestMarginal \UniqueTestID &
+						Accurate reading of \(V_{Min}\) &
+						Short the input to ground. Ensure the controller reading is within tolerance.
+						
+						\(R_{In} = 0 \Omega \) &
+						\(0 <= Register <= 4\) &
+						\(Register = 14.47 \pm 0.70 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of \(1/3 V_{Max}\). &
+						Apply a voltage to the input. Ensure the controller reading is within tolerance. 
+						
+						\(V_{In} = 1.7V \pm 1\%\) &
+						\(1323 <= Register <= 1433 \) &
+						\(Register = 1369.57 \pm 0.71 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of \(2/3 V_{Max}\). &
+						Apply a voltage to the input. Ensure the controller reading is within tolerance. 
+						
+						\(V_{In} = 3.3V \pm 1\%\) &
+						\(2572 <= Register <= 2778\) &
+						\(Register = 2652.12 \pm 1.58 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of \(V_{Max}\). &
+						Apply a voltage to the input. Ensure the controller reading is within tolerance. 
+						
+						\(V_{In} = 5V \pm 1\%\) &
+						\(3900 <= Register <= 4095\) &
+						\(Register = 4009.92 \pm 2.55 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Over voltage detection. &
+						Apply a voltage to the input. Ensure the controller reading is within tolerance. 
+						
+						\(V_{In} = 4.87V \pm 1\%\) &
+						\(3798 <= Register <= 4095\) &
+						\(Register = 3908.95 \pm 2.52 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Floating Input. &
+						Remove all external connections and impedances from the input &
+						Record register value
+						
+						\(R_{In} = \infty \Omega \) &
+						\(Register = 33.75 \pm 1.67 ticks \) \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsPassed{Temperature Inputs: Thermistors}}
+				Used Outdoor Air Temperature for the tests, 100 samples were taken and the mean/standard deviation were calculated
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						Shorted Input &
+						Short the input to ground &
+						\(Resistance = 0 \Omega \)
+						Record the register value &
+						\(Register = 0.53 \pm 0.50 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of low resistance. &
+						Connect a fixed value resistance between the input and ground, ensure the ADC register value falls within the specified tolerance &
+						\(Resistance = 1k \Omega \pm 1\% \)
+						\(170 <= Register <= 184 \) &
+						\(Register = 178.45 \pm 0.50 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of mid resistance. &
+						Connect a fixed value resistance between the input and ground, ensure the ADC register value falls within the specified tolerance &
+						\(Resistance = 10k \Omega \pm 1\% \)
+						\(1255 <= Register <= 1297 \) &
+						\(Register = 1276.13 \pm 0.37 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of high resistance. &
+						Connect a fixed value resistance between the input and ground, ensure the ADC register value falls within the specified tolerance &
+						\(Resistance = 100k \Omega \pm 1\% \)
+						\(3339 <= Register <= 3370 \) &
+						\(Register = 3348.39 \pm 0.57 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Floating Input &
+						Remove all external connections and impedances from the input
+						
+						\(Resistance = \infty \Omega \) &
+						Record the register value &
+						\(Register = 4079.07 \pm 0.76 ticks \) \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsPassed{Universal Inputs: 0-10V Input Mode}}
+				Used Universal Input 1 for the tests, 100 samples were taken and the mean/standard deviation were calculated
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of \(V_{Min}\) &
+						Short the input to ground. Ensure the controller reading is within tolerance.
+						
+						\(R_{In} = 0 \Omega \) &
+						\(0 <= Register <= 4\) &
+						\(Register = 0.08 \pm 0.34 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of \(1/3 V_{Max}\). &
+						Apply a voltage to the input. Ensure the controller reading is within tolerance. 
+						
+						\(V_{In} = 3.3V \pm 1\%\) &
+						\(1218 <= Register <= 1337\) &
+						\(Register = 1266.25 \pm 0.72 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of \(2/3 V_{Max}\). &
+						Apply a voltage to the input. Ensure the controller reading is within tolerance. 
+						
+						\(V_{In} = 6.6V \pm 1\%\) &
+						\(2439 <= Register <= 2671\) &
+						\(Register = 2532.38 \pm 1.02 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of \(V_{Max}\). &
+						Apply a voltage to the input. Ensure the controller reading is within tolerance.
+						
+						\(V_{In} = 10.0V \pm 1\%\) &
+						\(3698 <= Register <= 4045\) &
+						\(Register = 3839.17 \pm 0.91 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Over voltage detection. &
+						Apply a voltage to the input. Ensure the controller reading is within tolerance. 
+						
+						\(V_{In} = 10.59V \pm 1\%\) &
+						\(3917 <= Register <= 4095\) &
+						\(Register = 4065.04 \pm 1.04 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Floating input &
+						Leave the input floating and record the result
+						
+						\(R_{In} = \infty \Omega \) &
+						Record Register Value &
+						\(Register = 0.05 \pm 0.26 ticks \) \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsPassed{Universal Inputs: 0-20mA Input Mode}}
+				Used Universal Input 1 for the tests, 100 samples were taken and the mean/standard deviation were calculated
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of \(I_{Min}\) &
+						Short the input to ground. Ensure the controller reading is within tolerance.
+						
+						\(R_{In} = 0 \Omega \) &
+						\(0 <= Register <= 4\) &
+						\(Register = 0.14 \pm 0.49 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of \(1/3 I_{Max}\). &
+						Apply a current to the input. Ensure the controller reading is within tolerance.
+						
+						\(I_{In} = 6.7mA \pm 1\%\) &
+						\(1238 <= Register <= 1380\) &
+						\(Register = 1303.19 \pm 0.83 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of \(2/3 I_{Max}\). &
+						Apply a current to the input. Ensure the controller reading is within tolerance.
+						
+						\(I_{In} = 13.3mA \pm 1\%\) &
+						\(2462 <= Register <= 2742\) &
+						\(Register = 2554.37 \pm 0.86 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of \(I_{Max}\). &
+						Apply a current to the input. Ensure the controller reading is within tolerance.
+						
+						\(I_{In} = 20.0mA \pm 1\%\) &
+						\(3705 <= Register <= 4095\) &
+						\(Register = 3829.08 \pm 1.88 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Over current detection. &
+						Apply a current to the input. Ensure the controller reading is within tolerance.
+						
+						\(I_{In} = 21.1mA \pm 1\%\) &
+						\(3909 <= Register <= 4095\) &
+						\(Register = 4035.21 \pm 1.68 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Floating input &
+						Leave the input floating and record the result 
+						
+						\(R_{In} = \infty \Omega \) &
+						Record Register Value &
+						\(Register = 0.07 \pm 0.29 ticks \) \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsPassed{Universal Inputs: Thermistor Mode}}
+				Used Universal Input 1 for the tests, 100 samples were taken and the mean/standard deviation were calculated
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						Shorted Input &
+						Short the input to ground
+						
+						\(Resistance = 0 \Omega \) &
+						Record Register Value &
+						\(Register = 1.53 \pm 0.61 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of low resistance. &
+						Connect a fixed value resistance between the input and ground, ensure the ADC register value falls within the specified tolerance
+						
+						\(Resistance = 1k \Omega \pm 1\% \) &
+						\(170 <= Register <= 184 \) &
+						\(Register = 178.15 \pm 0.54 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of mid resistance. &
+						Connect a fixed value resistance between the input and ground, ensure the ADC register value falls within the specified tolerance
+						
+						\(Resistance = 10k \Omega \pm 1\% \) &
+						\(1255 <= Register <= 1297 \) &
+						\(Register = 1275.28 \pm 0.60 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Accurate reading of high resistance. &
+						Connect a fixed value resistance between the input and ground, ensure the ADC register value falls within the specified tolerance
+						
+						\(Resistance = 100k \Omega \pm 1\% \) &
+						\(3339 <= Register <= 3370 \) &
+						\(Register = 3353.89 \pm 0.80 ticks \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Floating Input &
+						Remove all external connections and impedances from the input
+						
+						\(Resistance = \infty \Omega \) &
+						Record the register value &
+						\(Register = 4094.92 \pm 0.27 ticks \) \\
+					\hline
+				\end{longtable}
+		\subsection{\TestsFailed{Analog Output}}
+			\subsubsection{\TestsFailed{ECM (12V): Analog Motor Control}}
+				This test was done on the ECM Pump 2 circuitry modified to use 12V as its output voltage. The op-amp was an OPA990.
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						Output Minimum &
+						Connect the output to a dummy load and command the MCU to output minimum
+						
+						\(DummyLoad = 10k\Omega \) 
+						
+						\(F = N/A \)
+						
+						\(D.C. = 0 \% \pm 1\% \) &
+						\(0.0V <= V_{RMS} <= 0.2V\)
+
+						\(V_{RipplePk-Pk} <= 200mV\) &
+						\(V_{RMS} = 20.5mV \pm 1.61mV \)
+						
+						\(V_{RipplePk-Pk} = 125mV \pm 7.85mV \)
+						\Oscillograph{4.2.1.1} \\
+					\hline
+						\TestFailed \UniqueTestID &
+						Output At Minimum Frequency &
+						Connect the output to a dummy load and command the MCU to output 1/3rd of its output voltage at the minimum frequency
+						
+						\(DummyLoad = 10k\Omega \)
+						
+						\(F = 80Hz \pm 1\% \)
+						
+						\(D.C. = 33 \% \) &
+						\(3.27V <= V_{RMS} <= 3.33V\)
+
+						\(V_{RipplePk-Pk} <= 200mV\) &
+						\(V_{RMS} = 3.34V \pm 1.08mV \)
+						
+						\(V_{RipplePk-Pk} = 5.57V \pm 9.79mV \)
+						\Oscillograph{4.2.1.2}
+						Frequency used is to close to the \(F_O\) frequency.
+						
+						The output is sensitive to the Dummy Load resistance. If the Dummy Load is factored in, the output is within tolerance and passes. \\
+					\hline
+						\TestFailed \UniqueTestID &
+						Output At Maximum Frequency &
+						Connect the output to a dummy load and command the MCU to output 2/3rds of its output voltage at the maximum frequency
+						
+						\(DummyLoad = 10k\Omega \)
+						
+						\(F = 2kHz \pm 1\% \)
+						
+						\(D.C. = 66 \% \) &
+						\(6.5V <= V_{RMS} <= 6.7V\)
+
+						\(V_{RipplePk-Pk} <= 200mV\) &
+						\(V_{RMS} = 5.72V \pm  0.00V \)
+						
+						\(V_{RipplePk-Pk} = 128mV \pm 7.32mV\)
+						\Oscillograph{4.2.1.3}
+						The output is sensitive to the Dummy Load resistance. If the Dummy Load is factored in, the output is within tolerance and passes. \\
+					\hline
+						\TestFailed \UniqueTestID &
+						Output Maximum &
+						Connect the output to a dummy load and command the MCU to output maximum
+						
+						\(DummyLoad = 10k\Omega \) 
+						
+						\(F = N/A \)
+						
+						\(D.C. = 100 \% \) &
+						\(9.8V <= V_{RMS} <= 10.2V\) &
+						\(V_{RMS} = 8.61V \pm  0.00V \)
+						
+						\(V_{RipplePk-Pk} = 126mV \pm 6.87mV\)
+						\Oscillograph{4.2.1.4}
+						The output is sensitive to the Dummy Load resistance. If the Dummy Load is factored in, the output is within tolerance and passes. \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsFailed{ECM (24V): Analog Motor Control}}
+				This test was done on the ECM Pump 1 circuitry.  The op-amp was an TSB571.
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						Output Minimum &
+						Connect the output to a dummy load and command the MCU to output minimum
+						
+						\(DummyLoad = 10k\Omega \) 
+						
+						\(F = N/A \)
+						
+						\(D.C. = 0 \% \) &
+						\(0.0V <= V_{RMS} <= 0.2V\)
+
+						\(V_{RipplePk-Pk} <= 200mV\) &
+						\(V_{RMS} = 17.5mV \pm 0.405mV \)
+						
+						\(V_{RipplePk-Pk} = 109mV \pm 5.31mV\)
+						\Oscillograph{4.2.2.1} \\
+					\hline
+						\TestFailed \UniqueTestID &
+						Output At Minimum Frequency &
+						Connect the output to a dummy load and command the MCU to output 1/3rd of its output voltage at the minimum frequency
+						
+						\(DummyLoad = 10k\Omega \)
+						
+						\(F = 80Hz \pm 1\% \)
+						
+						\(D.C. = 33 \% \) &
+						\(3.27V <= V_{RMS} <= 3.33V\)
+
+						\(V_{RipplePk-Pk} <= 200mV\) &
+						\(V_{RMS} = 5.34V \pm 5.44mV \)
+						
+						\(V_{RipplePk-Pk} = 8.80mV \pm 27.8mV\)
+						\Oscillograph{4.2.2.2}
+						
+						The LPF circuit is setup for 12V input and it is receiving 24V.
+						
+						The output voltage divider is setup for 12V input and it should be setup for 24V.
+						
+						The output is sensitive to the Dummy Load resistance. Given the voltage mismatch, it is unknown if the circuit is operating within tolerances. \\
+					\hline
+						\TestFailed \UniqueTestID &
+						Output At Maximum Frequency &
+						Connect the output to a dummy load and command the MCU to output 2/3rds of its output voltage at the maximum frequency
+						
+						\(DummyLoad = 10k\Omega \)
+						
+						\(F = 2kHz \pm 1\% \)
+						
+						\(D.C. = 66 \% \) &
+						\(6.5V <= V_{RMS} <= 6.7V\)
+
+						\(V_{RipplePk-Pk} <= 200mV\) &
+						\(V_{RMS} = 8.64V \pm 3.31mV \)
+						
+						\(V_{RipplePk-Pk} = 107mV \pm 7.17mV\)
+						\Oscillograph{4.2.2.3}
+						
+						The LPF circuit is setup for 12V input and it is receiving 24V.
+						
+						The output voltage divider is setup for 12V input and it should be setup for 24V.
+						
+						The output is sensitive to the Dummy Load resistance. Given the voltage mismatch, it is unknown if the circuit is operating within tolerances. \\
+					\hline
+						\TestFailed \UniqueTestID &
+						Output Maximum &
+						Connect the output to a dummy load and command the MCU to output maximum
+						
+						\(DummyLoad = 10k\Omega \) 
+						
+						\(F = N/A \)
+						
+						\(D.C. = 100 \% \) &
+						\(9.8V <= V_{RMS} <= 10.2V\) &
+						\(V_{RMS} = 8.64V \pm 4.78mV \)
+						
+						\(V_{RipplePk-Pk} = 106mV \pm 7.27mV\)
+						\Oscillograph{4.2.2.4}
+						
+						The LPF circuit is setup for 12V input and it is receiving 24V.
+						
+						The output voltage divider is setup for 12V input and it should be setup for 24V.
+						
+						The output is sensitive to the Dummy Load resistance. Given the voltage mismatch, it is unknown if the circuit is operating within tolerances. \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsMarginal{Air Dampers: Analog Motor Control}}
+				This test was done on the Air Damper 1 circuitry.
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						Output Minimum &
+						Connect the output to a dummy load and command the MCU to output minimum
+						
+						\(DummyLoad = 10k\Omega \) &
+						\(0.0V <= V_{RMS} <= 0.2V\)
+
+						\(V_{RipplePk-Pk} <= 200mV\) &
+						\(V_{RMS} = 16.1mV \pm 0.668mV \)
+						
+						\(V_{RipplePk-Pk} = 112mV \pm 4.64mV \)
+						\Oscillograph{4.2.3.1} \\
+					\hline
+						\TestMarginal \UniqueTestID &
+						Output At 1/3rd &
+						Connect the output to a dummy load and command the MCU to output 1/3rd of its output voltage
+						
+						\(DummyLoad = 10k\Omega \)
+						
+						\(F = 5kHz \)
+						
+						\(Duty Cycle = 33\% \) &
+						\(3.4V <= V_{RMS} <= 3.6V\)
+
+						\(V_{RipplePk-Pk} <= 200mV\) &
+						\(V_{RMS} = 3.52V \pm 1.12V \)
+						
+						\(V_{RipplePk-Pk} = 253mV \pm 11.0mV \)
+						\Oscillograph{4.2.3.2}
+						\textbf{Output voltage ripple is out of expected tolerance, but it looks like it is a victim of noise. I redid the measurement with highspeed measurement techniques and was able to get the measurement within the threshold for success, however the spikes still existed. I think the PWM generating the signal is acting as an aggressor on the analog output. I am updating it to a marginal pass with the assumption that the traces will be rerouted on the next revision to prevent the issue.} \\
+					\hline
+						\TestMarginal \UniqueTestID &
+						Output At 2/3rd &
+						Connect the output to a dummy load and command the MCU to output 2/3rds of its output voltage
+						
+						\(DummyLoad = 10k\Omega \)
+						
+						\(F = 5kHz \)
+						
+						\(Duty Cycle = 66\% \) &
+						\(6.9V <= V_{RMS} <= 7.1V\)
+
+						\(V_{RipplePk-Pk} <= 200mV\) &
+						\(V_{RMS} = 7.05V \pm 1.43mV \)
+						
+						\(V_{RipplePk-Pk} = 214mV \pm 8.38mV \)
+						\Oscillograph{4.2.3.3}
+						\textbf{Output voltage ripple is out of expected tolerance, but it looks like it is a victim of noise. I redid the measurement with highspeed measurement techniques and was able to get the measurement within the threshold for success, however the spikes still existed. I think the PWM generating the signal is acting as an aggressor on the analog output. I am updating it to a marginal pass with the assumption that the traces will be rerouted on the next revision to prevent the issue.} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Output Absolute Maximum &
+						Connect the output to a dummy load and command the MCU to output 100\%
+						
+						\(DummyLoad = 10k\Omega \) &
+						\(10.5V <= V_{RMS} <= 10.7V\)
+
+						\(V_{RipplePk-Pk} <= 200mV\) &
+						\(V_{RMS} = 10.7V \pm 7.04mV \)
+						
+						\(V_{RipplePk-Pk} = 56.8mV \pm 8.30mV \)
+						\Oscillograph{4.2.3.4} \\
+					\hline
+				\end{longtable}
+		\subsection{\TestsPassed{Binary Input}}
+			\subsubsection{\TestsPassed{ECM: PWM Tachometer}}
+				Test waveform was generated by ECM Pump 1 Control (modified for 12V operation) and was measured on the ECM Pump 1 Tach circuitry.
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						Input At Fully Off &
+						Input a low signal and verify the signal at the MCU is less than \(V_{IL}\)
+						
+						\(F_{PWM} = 5kHz \pm 1\% \)
+						
+						\(D.C._{PWM} = 0\% \)
+						
+						\(0.0V <= V_{In RMS} <= 3.7V \) &
+						\(0.0V <= V_{IL} <= 990mV \) &
+						\(V_{IL} = 12.1mV \pm  86.4\mu V \)
+						
+						\Oscillograph{4.3.1.1} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Input At 1/3rd Duty Cycle &
+						Input a PWM signal and verify the signal integrity at the MCU
+						\(F_{PWM} = 5kHz \pm 1\% \)
+						
+						\(D.C._{PWM} = 33\% \pm 1\% \)
+						
+						\(V_{Top} = 12V \pm 1 \% \) &
+						\(0V <= V_{IL} <= 990mV \)
+						
+						\(2.31V <= V_{IH} <= 3.3V \)
+						
+						\(t_{Rise} <= 5 \mu s \)
+						
+						\(t_{Fall} <= 5 \mu s \) &
+						\(V_{IL} = 312mV \pm 2.80mV \)
+						
+						\(V_{IH} = 2.87V \pm 1.28mV \)
+
+						\(t_{Rise} = 3.484\mu s \pm 51.94ns \)
+
+						\(t_{Fall} = 2.496\mu s \pm 27.70ns \)
+
+						\Oscillograph{4.3.1.2} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Input At 2/3rds Duty Cycle &
+						Input a PWM signal and verify the signal integrity at the MCU
+						\(F = 5kHz \pm 1\% \)
+						
+						\(D.C. = 66\% \pm 1\% \)
+						
+						\(V = 12V \pm 1 \% \) &
+						\(0V <= V_{IL} <= 990mV \)
+						
+						\(2.31V <= V_{IH} <= 3.3V \)
+						
+						\(t_{Rise} <= 5 \mu s \)
+						
+						\(t_{Fall} <= 5 \mu s \) &
+						\(V_{IL} = 298mV \pm 1.28mV \)
+						
+						\(V_{IH} = 2.86V \pm 1.19V \)
+
+						\(t_{Rise} = 3.364\mu s \pm 115.0ns \)
+
+						\(t_{Fall} = 2.564\mu s \pm 115.0ns \)
+
+						\Oscillograph{4.3.1.3} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Input At Fully On &
+						Input a high signal and verify the signal at the MCU is greater than \(V_{IH}\)
+						
+						\(F = 5kHz \pm 1\% \)
+						
+						\(D.C. = 100\% \)
+						
+						\(8.8V <= V_{In RMS} <= 12.6V \) &
+						\(2.31V <= V_{IH} <= 3.3V \) &
+						\(V_{IH} = 2.87V \pm 1.50mV \)
+						
+						\Oscillograph{4.3.1.4} \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsPassed{Binary Inputs: 24VAC Full-Wave}}
+				Tested using Zone 1 W. Voltage at input and MCU was measured using a multimeter.
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						Positive On Threshold &
+						Start with a lower than required DC voltage and increase it until the circuit turns on (within \(V_{IL}\))
+						
+						\(0V <= V_{IL} <= 990mV \) &
+						
+						\(V_{On} > V_{Off}\) &
+						\(V_{On} = 2.62V \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Positive Off Threshold &
+						Start with a higher than required DC voltage and reduce it until the circuit turns off (within \(V_{IH}\))
+						
+						\(2.31V <= V_{IH} <= 3.3V \) &
+						
+						\(V_{Off} < V_{On}\) &
+						\(V_{Off} = 2.54V \)\\
+					\hline
+						\TestPassed \UniqueTestID &
+						Negative On Threshold &
+						Start with a lower than required DC voltage and increase it until the circuit turns on (within \(V_{IL}\))
+						
+						\(0V <= V_{IL} <= 990mV \) &
+						
+						\(V_{On} > V_{Off}\) &
+						\(V_{On} = -2.60V \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Negative Off Threshold &
+						Start with a higher than required DC voltage and reduce it until the circuit turns off (within \(V_{IH}\))
+						
+						\(2.31V <= V_{IH} <= 3.3V \) &
+						
+						\(V_{Off} < V_{On}\) &
+						\(V_{Off} = -2.51V \)\\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsPassed{Ignition Alarm: 120VAC Half-Wave}}
+				Voltage at input measured using a multimeter, an oscilloscope was used at the MCU.
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						On Threshold &
+						Start with a lower than required voltage and increase it until the circuit turns on (within \(V_{IL}\))
+						
+						\(0V <= V_{IL} <= 990mV \) &
+						
+						\(V_{On} > V_{Off}\) &
+						\(V_{On} = 22.36V \)\\
+					\hline
+						\TestPassed \UniqueTestID &
+						Off Threshold &
+						Start with a higher than required voltage and reduce it until the circuit turns off (within \(V_{IH}\))
+						
+						\(2.31V <= V_{IH} <= 3.3V \) &
+						
+						\(V_{Off} < V_{On}\) &
+						\(V_{Off} = 18.63V \)\\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsPassed{LCD: Pushbuttons}}
+				Voltage at MCU was measured using a multimeter.
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						Button Pressed &
+						Press the button and ensure the signal at the MCU is within \(V_{IL}\) &
+						\(0V <= V_{IL} <= 990mV \) &
+						\(V_{IL} = 5mV \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Button Released &
+						Press the button and ensure the signal at the MCU is within \(V_{IH}\) &
+						\(2.31V <= V_{IH} <= 3.3V \) &
+						\(V_{IH} = 3.298V \) \\
+					\hline
+				\end{longtable}
+		\subsection{\TestsUntested{Binary Output}}
+			\subsubsection{\TestsPassed{ECM (12V): PWM Motor Control}}
+				This test was done on the ECM Pump 2 circuitry which was modified for 12V operation.
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						PWM Low &
+						MCU generates a constant low signal into a dummy-load and it is confirmed by an oscilloscope
+						
+						\(R_{DummyLoad} = 10k\Omega \)
+						
+						\(F_{PWM} = 2.0kHz \pm 1\% \)
+						
+						\(D.C_{PWM} = 0\% \) &						
+						\(-400mV <= V_{OL} <= 400mV \) &
+						\(V_{OL} = 18.3mV \pm 676 \mu V \)
+						
+						\Oscillograph{4.4.1.1} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						PWM At Minimum Frequency &
+						MCU generates a PWM signal into no-load and it is confirmed by an oscilloscope
+						\(R_{Dummy Load} = \infty \Omega \)
+						
+						\(F_{PWM} = 80Hz \pm 1\% \)
+						
+						\(Duty Cyle = 33.0\% \pm 1\% \) &
+						\(-400mV <= V_{OL} <= 400mV \)
+						
+						\(11.7V <= V_{OH} <= 12.3V \) &
+						
+						\(V_{OL} = 53.4mV \pm 6.23mV \)
+						
+						\(V_{OH} = 12.1V \pm 0.00V \)
+						
+						\Oscillograph{4.4.1.2} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						PWM At Maximum Frequency &
+						MCU generates a PWM signal into no-load and it is confirmed by an oscilloscope
+						
+						\(F_{PWM} = 2.0kHz \pm 1\% \)
+						
+						\(D.C_{PWM} = 66.0\% \pm 1\% \) &
+						\(-400mV <= V_{OL} <= 400mV \)
+						
+						\(11.7V <= V_{OH} <= 12.3V \) &						
+						\(V_{OL} = 11.0mV \pm 6.37mV \)
+						
+						\(V_{OH} = 12.1V \pm 5.98mV \)
+						
+						\Oscillograph{4.4.1.3} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						PWM High &
+						MCU generates a constant high signal into a dummy-load and it is confirmed by an oscilloscope
+						
+						\(R_{DummyLoad} = 10k\Omega \)
+						
+						\(F_{PWM} = 2.0kHz \pm 1\% \)
+						
+						\(D.C_{PWM} = 66.0\% \pm 1\% \) &
+						\(11.7V <= V_{OH} <= 12.3V \) &
+						\(V_{OH} = 12.1V \pm 4.89mV \)
+						
+						\Oscillograph{4.4.1.4} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Rise and fall times under load &
+						MCU generates a PWM signal into a dummy-load and its rise/fall time is record by an oscilloscope
+						
+						\(R_{DummyLoad} = 10k\Omega \)
+						
+						\(F_{PWM} = 2.0kHz \pm 1\% \)
+						
+						\(D.C_{PWM} = 1.0\% \pm 0.1\% \) &
+						\(t_{Rise} <= 5.0 \mu s\)
+						
+						\(t_{Fall} <= 5.0 \mu s\) &
+						\(t_{Rise} = 65.00ns \pm 0.000s \)
+						
+						\(t_{Fall} = 45.00ns \pm 0.000s \)
+						
+						\Oscillograph{4.4.1.5} \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsPassed{ECM (24V): PWM Motor Control}}
+				This test was done on the ECM Pump 1 circuitry.
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						PWM Low &
+						MCU generates a constant low signal into a dummy-load and it is confirmed by an oscilloscope
+						
+						\(R_{DummyLoad} = 10k\Omega \)
+						
+						\(F_{PWM} = 2.0kHz \pm 1\% \)
+						
+						\(D.C_{PWM} = 0\% \) &						
+						\(-400mV <= V_{OL} <= 400mV \) &
+						\(V_{OL} = 4.93mV \pm 607 \mu V \)
+						
+						\Oscillograph{4.4.2.1} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						PWM At Minimum Frequency &
+						MCU generates a PWM signal into no-load and it is confirmed by an oscilloscope
+						\(R_{Dummy Load} = \infty \Omega \)
+						
+						\(F_{PWM} = 80Hz \pm 1\% \)
+						
+						\(Duty Cyle = 33.0\% \pm 1\% \) &
+						\(-400mV <= V_{OL} <= 400mV \)
+						
+						\(23.3V <= V_{OH} <= 24.3V \) &
+						
+						\(V_{OL} = -171mV \pm 7.01mV \)
+						
+						\(V_{OH} = 23.7V \pm 16.6mV \)
+						
+						\Oscillograph{4.4.2.2} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						PWM At Maximum Frequency &
+						MCU generates a PWM signal into no-load and it is confirmed by an oscilloscope
+						
+						\(F_{PWM} = 2.0kHz \pm 1\% \)
+						
+						\(D.C_{PWM} = 66.0\% \pm 1\% \) &
+						\(-400mV <= V_{OL} <= 400mV \)
+						
+						\(23.3V <= V_{OH} <= 24.3V \) &						
+						\(V_{OL} = -319mV \pm 27.8mV \)
+						
+						\(V_{OH} = 23.9V \pm 37.4mV \)
+						
+						\Oscillograph{4.4.2.3} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						PWM High &
+						MCU generates a constant high signal into a dummy-load and it is confirmed by an oscilloscope
+						
+						\(R_{DummyLoad} = 10k\Omega \)
+						
+						\(F_{PWM} = 2.0kHz \pm 1\% \)
+						
+						\(D.C_{PWM} = 66.0\% \pm 1\% \) &
+						\(23.3V <= V_{OH} <= 24.3V \) &
+						\(V_{OH} = 23.9V \pm 15.4mV \)
+						
+						\Oscillograph{4.4.2.4} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Rise and fall times under load &
+						MCU generates a PWM signal into a dummy-load and its rise/fall time is record by an oscilloscope
+						
+						\(R_{DummyLoad} = 10k\Omega \)
+						
+						\(F_{PWM} = 2.0kHz \pm 1\% \)
+						
+						\(D.C_{PWM} = 1.0\% \pm 0.1\% \) &
+						\(t_{Rise} <= 5.0 \mu s\)
+						
+						\(t_{Fall} <= 5.0 \mu s\) &
+						\(t_{Rise} = 92.67ns \pm 3.328ns \)
+						
+						\(t_{Fall} = 68.59ns \pm 3.372ns \)
+						
+						\Oscillograph{4.4.2.5} \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsPassed{HRV/Humidity: Bidirectional Dry Contact}}
+				Used HRV for the tests.
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						Dry contact on resistance &
+						Command the MCU to turn the dry contact on and measure its resistance &		
+						\(R_{On} <= 600m\Omega \) &
+						\(R_{On} = 0.3\Omega \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Dry contact off resistance &
+						Command the MCU to turn the dry contact off and measure its resistance &
+						\(R_{Off} = \infty\Omega \) &
+						\(R_{Off} = OL \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Max expected current &
+						Turn on the dry contact and run the maximum expected current through the device and ensure no degradation of performance
+						
+						\(I_{MaxExpected} = 750mA \pm 1\% \) 
+						
+						\(T_{Duration} >= 1min \) &
+						\(R_{On} <= 600m\Omega \)
+						
+						\(R_{Off} = \infty\Omega \) &
+						\(R_{On} = 0.3\Omega \)
+						
+						\(R_{Off} = OL \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Max expected voltage &
+						Turn off the dry contact and apply the maximum expect voltage across the device and ensure no degradation of performance
+						
+						\(V_{MaxExpected} = 60V \pm 1\% \) 
+						
+						\(T_{Duration} >= 1min \) &
+						\(R_{On} <= 600m\Omega \)
+						
+						\(R_{Off} = \infty\Omega  \) &
+						\(R_{On} = 0.3\Omega \)
+						
+						\(R_{Off} = OL \) \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsUntested{High Voltage Relays: Current Limited Relay}}
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						Relay on resistance &
+						Command the MCU to turn the relay on and measure its resistance &		
+						\(R_{On} <= m\Omega \) &
+						\(R_{On} = 0.1\Omega \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Relay off resistance &
+						Command the MCU to turn the relay off and measure its resistance &
+						\(R_{Off} = \infty\Omega  \) &
+						\(R_{Off} = OL \) \\
+					\hline
+						\Untested \UniqueTestID &
+						Hold current &
+						Turn on the relay and run the rated hold current through the device and ensure no degradation of performance or premature turn off
+						
+						\(I_{Hold} = mA \pm 1\% \) 
+						
+						\(V_{Compliance} = V \pm 1\% \)
+						
+						\(T_{Duration} >= 1min \) &
+						\(R_{On} <= m\Omega \) 
+						
+						Current flows for duration of test &
+						\(R_{On} = m\Omega \)
+						
+						Current continued to flow:  \\
+					\hline
+						\Untested \UniqueTestID &
+						Trip current &
+						Turn on the relay and run 110\% of rated trip current through the device and ensure there is no degradation of performance and the current is stopped
+						
+						\(I_{Trip} = mA \pm 1\% \)
+						
+						\(V_{Compliance} = V \pm 1\% \)
+						
+						\(T_{Duration} >= min \) &
+						\(R_{On} <= m\Omega \) 
+						
+						Current stops flowing during test &
+						\(R_{On} = m\Omega \)
+						
+						Current stopped flowing during test:  \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsPassed{High Voltage Relays: Relay}}
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						Relay on resistance &
+						Command the MCU to turn the relay on and measure its resistance &		
+						\(R_{On} <= m\Omega \) &
+						\(R_{On} = 0.1\Omega \) \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Relay off resistance &
+						Command the MCU to turn the relay off and measure its resistance &
+						\(R_{Off} = \infty\Omega  \) &
+						\(R_{Off} = OL \) \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsPassed{Water Valve: Stepper Motor}}
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						Waveform Sequence &
+						Command the MCU to drive the stepper motor
+						
+						\(R_{DummyLoads} = 10k\Omega \pm 1\% \)
+						
+						\(F_{PWM} = 1kHz \pm 1\% \) &		
+
+						\includegraphics[width=\linewidth,height=10cm,keepaspectratio]{Stepper Motor Full-Wave Mode} &
+						Channel 1: Black
+						
+						Channel 2: Blue
+						
+						Channel 3: Yellow
+						
+						Channel 4: Red
+						
+						\Oscillograph{4.4.6.1} \\
+					\hline
+				\end{longtable}
+		\subsection{\TestsUntested{Digital Communications}}
+			\subsubsection{\TestsMarginal{3.3V I2C: Ambient Temperature and Barometric Pressure Sensor}}
+				Tests were performed while communicating with the ambient pressure sensor.
+				\TestResultsUsinglongtable
+					\hline
+						\TestMarginal \UniqueTestID &
+						Clock Line Inspection &
+						Observe the clock line for obvious defects &
+						Must be monotonic
+						
+						Record oscillograph &
+						The start and stop bits have a small amount of cross talk from the data line, but are otherwise monotonic.
+						
+						The rise times are valid, but I would prefer to see them improved further.
+						\Oscillograph{4.5.1.1} \\
+					\hline
+						\TestMarginal \UniqueTestID &
+						Data Line Inspection &
+						Observe the data line for obvious defects &
+						Must be monotonic
+						
+						Record oscillograph &
+						The Highs have a small amount of cross talk with the clock line, but are otherwise monotonic
+						
+						The rise times are valid, but I would prefer to see them improved further.
+						\Oscillograph{4.5.1.2} \\
+					\hline
+						\Untested \UniqueTestID &
+						Clock Frequency &
+						During normal comms with the device, measure the clock frequency
+						
+						Fast-Mode (400kHz) &
+						\(0Hz <= F_{Clock} <= 400kHz \) &
+						\(F_{Clock} =  \)
+						
+						\Oscillograph{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Hold time (repeated) START condition &
+						During normal comms with the device, measure the hold time during a repeated start condition.
+						
+						Fast-Mode (400kHz) &
+						\(t_{HD:STA} >= 600ns \) &
+						\(t_{HD:STA} =  \)
+						
+						\Oscillograph{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						LOW period of the SCL clock &
+						During normal comms with the device, measure the low period of the clock.
+						
+						Fast-Mode (400kHz) &
+						\(t_{LOW} >= 1.3\mu s \) &
+						\(t_{LOW} =  \)
+						
+						\Oscillograph{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						HIGH period of the SCL clock &
+						During normal comms with the device, measure the high period of the clock.
+						
+						Fast-Mode (400kHz) &
+						\(t_{HIGH} >= 600ns \) &
+						\(t_{HIGH} =  \)
+						
+						\Oscillograph{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Set-up time for a repeated START
+condition &
+						During normal comms with the device, measure the setup time for a repeated start.
+						
+						Fast-Mode (400kHz) &
+						\(t_{SU:STA} >= 600ns \) &
+						\(t_{SU:STA} =  \)
+						
+						\Oscillograph{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Data setup time &
+						During normal comms with the device, measure the setup time for data.
+						
+						Fast-Mode (400kHz) &
+						\(t_{SU:DAT} >= 100ns \) &
+						\(t_{SU:DAT} =  \)
+						
+						\Oscillograph{placeholder} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Rise time of clock &
+						During normal comms with the device, measure the clock's rise time.
+						
+						Fast-Mode (400kHz) &
+						\(20ns <= t_{r:CLK} <= 300ns \) &
+						\(t_{r:CLK30-70\%} = 256.0ns \)
+						
+						\(t_{r:CLK10-90\%} = 606.5ns \pm 18.99ns \)
+						
+						\Oscillograph{4.5.1.9} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Rise time of data &
+						During normal comms with the device, measure the data's rise time.
+						
+						Fast-Mode (400kHz) &
+						\(20ns <= t_{r:DAT} <= 300ns \) &
+						\(t_{r:DAT30-70\%} = 268.0ns \)
+						
+						\(t_{r:DAT10-90\%} = 711.5ns \pm 10.98ns \)
+						
+						\Oscillograph{4.5.1.10} \\
+					\hline
+						\Untested \UniqueTestID &
+						Fall time of clock &
+						During normal comms with the device, measure the clock's fall time.
+						
+						Fast-Mode (400kHz)
+						
+						\(V_{Bus} = 3.3V \) &
+						\(12ns <= t_{f:CLK} <= 300ns \) &
+						\(t_{f:CLK} =  \)
+						
+						\Oscillograph{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Fall time of data &
+						During normal comms with the device, measure the data's fall time.
+						
+						Fast-Mode (400kHz)
+						
+						\(V_{Bus} = 3.3V \) &
+						\(12ns <= t_{f:DAT} <= 300ns \) &
+						\(t_{f:DAT} =  \)
+						
+						\Oscillograph{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Set-up time for STOP condition &
+						During normal comms with the device, measure the setup time for a stop.
+						
+						Fast-Mode (400kHz) &
+						\(t_{SU:STO} >= 600ns \) &
+						\(t_{SU:STO} =  \)
+						
+						\Oscillograph{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Bus free time between a STOP and
+START condition &
+						During normal comms with the device, measure the bus dead time between packets.
+						
+						Fast-Mode (400kHz) &
+						\(t_{BUF} >= 1.3\mu s \) &
+						\(t_{BUF} =  \)
+						
+						\Oscillograph{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Data Valid Time &
+						During normal comms with the device, measure the valid data time.
+						
+						Fast-Mode (400kHz) &
+						\(t_{VD:DAT} <= 900ns \) &
+						\(t_{VD:DAT} =  \)
+						
+						\Oscillograph{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Data valid acknowledge time &
+						During normal comms with the device, measure the valid data acknowledge time.
+						
+						Fast-Mode (400kHz) &
+						\(t_{VD:ACK} <= 900ns \) &
+						\(t_{VD:ACK} =  \)
+						
+						\Oscillograph{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Data hold time &
+						During normal comms with the device, measure the hold time for data.
+						
+						Fast-Mode (400kHz) &
+						\(t_{HD:DAT} <= Max(t_{VD:DAT} and t_{VD:ACK}) \) &
+						\(t_{HD:DAT} =  \)
+						
+						\Oscillograph{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Noise margin at the LOW level &
+						During normal comms with the device, measure the low noise level.
+						
+						Fast-Mode (400kHz) &
+						\(V_{nL} >= 330mV \) &
+						\(V_{nL} =  \)
+						
+						\Oscillograph{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Noise margin at the HIGH level &
+						During normal comms with the device, measure the high noise level.
+						
+						Fast-Mode (400kHz) &
+						\(V_{nH} >= 660mV \) &
+						\(V_{nH} =  \)
+						
+						\Oscillograph{placeholder} \\
+					\hline
+				\end{longtable}
+				\TimingDiagram{I2C timing diagram}{I2C Timing Diagram}
+				\textbf{Note: Be careful when making measurements on an I2C bus. Most tools will make a measurement at 10\% or 90\% of a wave form (eg. rise time), I2C is specifically specified to measure using 30\% and 70\% for many of its timing attributes, rise and fall times included. Follow the Timing Diagram very carefully! If using these tools for rise/fall times, expect valid circuits to exceed requirements by as much as 2.6x in some circumstances.}
+			\subsubsection{\TestsUntested{SPI: LCD}}
+			\subsubsection{\TestsFailed{RS485: BACnet}}
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						TX Line Inspection Without Termination &
+						Observe the TX line for obvious defects
+						
+						\(Baud = 115200Bd \)
+						
+						Unterminated &
+						Must be monotonic
+						
+						Record oscillograph &
+						Monotonic: Yes
+						
+						The positive half of the signal has rounding on the leading edge, but not enough that I am concerned about it.
+						
+						\Oscillograph{4.5.3.1} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						TX Line Inspection With Termination &
+						Observe the TX line for obvious defects
+						
+						\(Baud = 115200Bd \)
+						
+						Terminated &
+						Must be monotonic
+						
+						Record oscillograph &
+						Monotonic: Yes
+						
+						\Oscillograph{4.5.3.2} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Baud Rate &
+						During normal comms with the device, measure the Baud rate to ensure it is what was commanded
+						
+						\(Baud = 115200Bd \)
+						
+						Unterminated  &
+						\(114048Bd <= Baud <= 116352Bd \) &
+						\(Baud = 115.5kBd \)
+						
+						\Oscillograph{4.5.3.3} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Rise time of TX &
+						During normal comms with the device, measure the TX line's rise time.
+						
+						\(Baud = 115200Bd \)
+						
+						Unterminated  &
+						\(10ns <= t_{r:TX} <= 30ns \) &
+						\(t_{r:TX} = 25.08ns \pm 883.5ps \)
+						
+						\Oscillograph{4.5.3.4-7} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Fall time of TX &
+						During normal comms with the device, measure the TX line's fall time.
+						
+						\(Baud = 115200Bd \)
+						
+						Unterminated  &
+						\(10ns <= t_{f:TX} <= 30ns \) &
+						\(t_{f:TX} = 25.18ns \pm 620.9ps \)
+						
+						\Oscillograph{4.5.3.4-7} \\
+					\hline
+						\TestFailed \UniqueTestID &
+						TX \(V_{OH}\) &
+						During normal comms with the device, measure the TX output high voltage.
+						
+						\(Baud = 115200Bd \)
+						
+						Unterminated   &
+						\(V_{OH} >= 4.0V \) &
+						\(V_{OH} = 3.34V \pm 3.84mV \)
+						
+						\Oscillograph{4.5.3.4-7} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						TX \(V_{OL}\) &
+						During normal comms with the device, measure the TX output low voltage.
+						
+						\(Baud = 115200Bd \)
+						
+						Unterminated   &
+						\(V_{OL} <= 0.4V \) &
+						\(V_{OL} = 355mV \pm 8.19mV \)
+						
+						\Oscillograph{4.5.3.4-7} \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsPassed{UART: RF LCD}}
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						TX Line Inspection &
+						Observe the TX line for obvious defects
+						
+						\(Baud = 115200Bd \) &
+						Must be monotonic
+						
+						Record oscillograph &
+						Monotonic: Yes
+						\Oscillograph{4.5.4.1} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Baud Rate &
+						During normal comms with the device, measure the Baud rate to ensure it is what was commanded
+						
+						\(Baud = 115200Bd \) &
+						\(114048Bd <= Baud <= 116352Bd \) &
+						\(Baud = 115.2kBd \)
+						
+						\Oscillograph{4.5.4.2} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Rise time of TX &
+						During normal comms with the device, measure the TX line's rise time.
+						
+						\(Baud = 115200Bd \) &
+						\(0ns <= t_{r:TX} <= 87ns \) &
+						\(t_{r:TX} = 13.95ns \pm 299.4ps \)
+						
+						\Oscillograph{4.5.4.3} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Fall time of TX &
+						During normal comms with the device, measure the TX line's fall time.
+						
+						\(Baud = 115200Bd \) &
+						\(0ns <= t_{f:TX} <= 87ns \) &
+						\(t_{f:TX} = 14.68ns \pm 399.9ps \)
+						
+						\Oscillograph{4.5.4.4-6} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						TX \(V_{OH}\) &
+						During normal comms with the device, measure the TX output high voltage.
+						
+						\(Baud = 115200Bd \) &
+						\(V_{OH} >= 2.31V \) &
+						\(V_{OH} = 3.31V \pm 2.02mV \)
+						
+						\Oscillograph{4.5.4.4-6} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						TX \(V_{OL}\) &
+						During normal comms with the device, measure the TX output low voltage.
+						
+						\(Baud = 115200Bd \) &
+						\(V_{OL} <= 990mV \) &
+						\(V_{OL} = -21.7mV \pm 12.5mV \)
+						
+						\Oscillograph{4.5.4.4-6} \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsUntested{LIN: LINbus}}
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						Bus Inspection &
+						Observe the bus for obvious defects
+						
+						\(Baud = 20000Bd \) &
+						Must be monotonic
+						
+						Record oscillograph &
+						Monotonic: Yes
+						
+						\Oscillograph{4.5.5.1} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Baud Rate &
+						During normal comms with the device, measure the Baud rate to ensure it is what was commanded
+						
+						\(Baud = 20000Bd \) &
+						\(19800Bd <= Baud <= 20200Bd \) &
+						\(Baud = 20.00kBd \)
+						
+						\Oscillograph{4.5.5.2-6} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Rise time of the bus &
+						During normal comms with the device, measure the bus's rise time.
+						
+						\(Baud = 20000Bd \) &
+						\(3.5\mu s <= t_{r} <= 22.5\mu s \) &
+						\(t_{r} = 5.883\mu s \pm 56.28ns \)
+						
+						\Oscillograph{4.5.5.2-6} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Fall time of the bus &
+						During normal comms with the device, measure the bus's fall time.
+						
+						\(Baud = 20000Bd \) &
+						\(3.5\mu s <= t_{f} <= 22.5 \mu s \) &
+						\(t_{f} = 6.886\mu s \pm 48.01ns \)
+						
+						\Oscillograph{4.5.5.2-6} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Bus \(V_{OH}\) &
+						During normal comms with the device, measure the bus's output high voltage.
+						
+						\(Baud = 20000Bd \) &
+						\(V_{OH} >= 9.6V \) &
+						\(V_{OH} = 11.6V \pm 10.4mV \)
+						
+						\Oscillograph{4.5.5.2-6} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Bus \(V_{OL}\) &
+						During normal comms with the device, measure the bus's output low voltage.
+						
+						\(Baud = 20000Bd \) &
+						\(V_{OL} <= 4.8V \) &
+						\(V_{OL} = 924mV \pm 6.49mV \)
+						
+						\Oscillograph{4.5.5.2-6} \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsUntested{USB: USB}}
+		\subsection{\TestsPassed{Clocks}}
+			\subsubsection{\TestsPassed{24MHz Crystal}}
+				A Renesas rep gave me known working amplitudes, but was unable to find thresholds to compare against. It is assumed that better than these values is acceptable.
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						Frequency &
+						Measure the frequency and ensure it is within tolerance &
+						\(23999760Hz <= F_{Crystal} <= 24000240Hz \) &
+						\(F_{Crystal} = 24.0000MHz \pm 94.4kHz\)
+						
+						\Oscillograph{4.6.1.x} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Amplitude &
+						Measure the amplitude and ensure it is within tolerance &
+						\(V_{Amplitude} >= 1.15V \) &
+						\(V_{Amplitude} = 2.81V \pm 20.7mV \)
+						
+						\Oscillograph{4.6.1.x} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Quality &
+						Measure the signal and ensure it is not distorted &
+						No distortion, clean sine wave &
+						No distortion: Yes
+						
+						\Oscillograph{4.6.1.x} \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsPassed{32.768kHz Crystal}}
+				A Renesas rep gave me known working amplitudes, but was unable to find thresholds to compare against. It is assumed that better than these values is acceptable.
+				\TestResultsUsinglongtable
+					\hline
+						\TestPassed \UniqueTestID &
+						Frequency &
+						Measure the frequency and ensure it is within tolerance &
+						\(32767Hz <= F_{Crystal} <= 32769Hz \) &
+						\(F_{Crystal} = 32.7670kHz \pm 62.3Hz \)
+						
+						\Oscillograph{4.6.2.x} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Amplitude &
+						Measure the amplitude and ensure it is within tolerance &
+						\(V_{Amplitude} >= 407mV \) &
+						\(V_{Amplitude} = 509mV \pm 111mV \)
+						
+						\Oscillograph{4.6.2.x} \\
+					\hline
+						\TestPassed \UniqueTestID &
+						Quality &
+						Measure the signal and ensure it is not distorted &
+						No distortion, clean sine wave &
+						No distortion: Minimal, but acceptable
+						
+						\Oscillograph{4.6.2.x} \\
+					\hline
+				\end{longtable}
+
+	%Reliability
+	\newpage
+	\section{\TestsUntested{Reliability}}
+		\subsection{\TestsUntested{Boot}}
+			\subsubsection{\TestsUntested{Cold Boots}}
+				\TestResultsUsinglongtable
+					\hline
+						\Untested \UniqueTestID &
+						Room Temperature &
+						Ensure power on all capacitors is minimal, turn on the unit and ensure it boots. Do this repeatedly
+						
+						\(t_{Ambient} = Room Temperature \)
+						
+						\(Boots >= 1000 \)
+						
+						\(V_{Capacitor} < 1\% \) &
+						Unit successfully boots every time &
+						Pass:
+						
+						Fail: \\
+					\hline
+						\Untested \UniqueTestID &
+						Max Temperature &
+						Ensure power on all capacitors is minimal, turn on the unit and ensure it boots. Do this repeatedly.
+						
+						\(t_{Ambient} = Max Temperature \)
+						
+						\(Boots >= 1000 \)
+						
+						\(V_{Capacitor} < 1\% \) &
+						Unit successfully boots every time &
+						Pass:
+						
+						Fail: \\
+					\hline
+						\Untested \UniqueTestID &
+						Min Temperature &
+						Ensure power on all capacitors is minimal, turn on the unit and ensure it boots. Do this repeatedly.
+						
+						\(t_{Ambient} = Min Temperature \)
+						
+						\(Boots >= 1000 \)
+						
+						\(V_{Capacitor} < 1\% \) &
+						Unit successfully boots every time &
+						Pass:
+						
+						Fail: \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsUntested{Hot Boots}}
+				\TestResultsUsinglongtable
+					\hline
+						\Untested \UniqueTestID &
+						Room Temperature &
+						Ensure power is always above what is required to operate, reset the unit either with a software command or by toggling the reset line, ensure it boots successfully. Do this repeatedly.
+						
+						\(t_{Ambient} = Room Temperature \)
+						
+						\(Boots >= 1000 \)
+						
+						\(V_{Capacitor} < 1\% \) &
+						Unit successfully boots every time &
+						Pass:
+						
+						Fail: \\
+					\hline
+						\Untested \UniqueTestID &
+						Max Temperature &
+						Ensure power is always above what is required to operate, reset the unit either with a software command or by toggling the reset line, ensure it boots successfully. Do this repeatedly.
+						
+						\(t_{Ambient} = Max Temperature \)
+						
+						\(Boots >= 1000 \)
+						
+						\(V_{Capacitor} < 1\% \) &
+						Unit successfully boots every time &
+						Pass:
+						
+						Fail: \\
+					\hline
+						\Untested \UniqueTestID &
+						Min Temperature &
+						Ensure power is always above what is required to operate, reset the unit either with a software command or by toggling the reset line, ensure it boots successfully. Do this repeatedly.
+						
+						\(t_{Ambient} = Min Temperature \)
+						
+						\(Boots >= 1000 \)
+						
+						\(V_{Capacitor} < 1\% \) &
+						Unit successfully boots every time &
+						Pass:
+						
+						Fail: \\
+					\hline
+				\end{longtable}
+	
+	%Environmental
+	\newpage
+	\section{\TestsUntested{Environmental}}
+		\subsection{\TestsUntested{Temperature}}
+			\subsubsection{\TestsUntested{Operational}}
+				\TestResultsUsinglongtable
+					\hline
+						\Untested \UniqueTestID &
+						High Temperature Soak &
+						 &
+						Unit remains functional for duration of test &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Low Temperature Soak &
+						 &
+						Unit remains functional for duration of test &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Temperature Cycling &
+						 &
+						Unit remains functional for duration of test &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Thermal Shock &
+						 &
+						Unit remains functional for duration of test &
+						\PictureOfTest{placeholder} \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsUntested{Storage}}
+				\TestResultsUsinglongtable
+					\hline
+						\Untested \UniqueTestID &
+						High Temperature Storage &
+						 &
+						Unit is functional after test &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Low Temperature Storage &
+						 &
+						Unit is functional after test &
+						\PictureOfTest{placeholder} \\
+					\hline
+				\end{longtable}
+		\subsection{\TestsUntested{Humidity}}
+			\subsubsection{\TestsUntested{Operational}}
+				\TestResultsUsinglongtable
+					\hline
+						\Untested \UniqueTestID &
+						Damp High Temperature Soak &
+						 &
+						Unit remains functional for duration of test &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Damp Low Temperature Soak &
+						 &
+						Unit remains functional for duration of test &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Damp Temperature Cycling &
+						 &
+						Unit remains functional for duration of test &
+						\PictureOfTest{placeholder} \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsUntested{Storage}}
+				\TestResultsUsinglongtable
+					\hline
+						\Untested \UniqueTestID &
+						Damp High Temperature Storage &
+						 &
+						Unit is functional after test &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Damp Low Temperature Storage &
+						 &
+						Unit is functional after test &
+						\PictureOfTest{placeholder} \\
+					\hline
+				\end{longtable}
+		\subsection{\TestsUntested{Pressure}}
+			\subsubsection{\TestsUntested{Operational}}
+				\TestResultsUsinglongtable
+					\hline
+						\Untested \UniqueTestID &
+						High Altitude Operation &
+						 &
+						Unit is functional after test &
+						\PictureOfTest{placeholder} \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsUntested{Storage}}
+				\TestResultsUsinglongtable
+					\hline
+						\Untested \UniqueTestID &
+						High Altitude Storage &
+						 &
+						Unit is functional after test &
+						\PictureOfTest{placeholder} \\
+					\hline
+				\end{longtable}
+		\subsection{\TestsUntested{Weather}}
+			\subsubsection{\TestsUntested{Operational}}
+				\TestResultsUsinglongtable
+					\hline
+						\Untested \UniqueTestID &
+						UV Soak &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Light Rain &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Heavy Rain &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Indirect Lightning Strike &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsUntested{Storage}}
+				\TestResultsUsinglongtable
+					\hline
+						\Untested \UniqueTestID &
+						UV Soak &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Light Rain &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Heavy Rain &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Indirect Lightning Strike &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+				\end{longtable}
+		\subsection{\TestsUntested{Ingress Protection}}
+			\subsubsection{\TestsUntested{Water}}
+			\subsubsection{\TestsUntested{Dust}}
+	
+	%Mechanical
+	\newpage
+	\section{\TestsUntested{Mechanical}}
+		\subsection{\TestsUntested{Dimensional}}
+				\TestResultsUsinglongtable
+					\hline
+						\Untested \UniqueTestID &
+						Component Clearance &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Dimension Tolerance &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Hole tolerance &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+				\end{longtable}
+		\subsection{\TestsUntested{Damage}}
+			\subsubsection{\TestsUntested{Drop on Carpet}}
+				\TestResultsUsinglongtable
+					\hline
+						\Untested \UniqueTestID &
+						Drop on +X face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Drop on -X face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Drop on +Y face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Drop on -Y face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Drop on +Z face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Drop on -Z face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsUntested{Drop on Wood}}
+				\TestResultsUsinglongtable
+					\hline
+						\Untested \UniqueTestID &
+						Drop on +X face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Drop on -X face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Drop on +Y face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Drop on -Y face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Drop on +Z face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Drop on -Z face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsUntested{Drop on Concrete}}
+				\TestResultsUsinglongtable
+					\hline
+						\Untested \UniqueTestID &
+						Drop on +X face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Drop on -X face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Drop on +Y face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Drop on -Y face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Drop on +Z face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Drop on -Z face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsUntested{Drop on Metal}}
+				\TestResultsUsinglongtable
+					\hline
+						\Untested \UniqueTestID &
+						Drop on +X face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Drop on -X face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Drop on +Y face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Drop on -Y face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Drop on +Z face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Drop on -Z face &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsUntested{Harness Drop}}
+				\TestResultsUsinglongtable
+					\hline
+						\Untested \UniqueTestID &
+						Harness Drop &
+						Drop the device 1m so that the wire harness arrests its fall. &
+						Unit functions after test. &
+						\PictureOfTest{placeholder} \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsUntested{Vibration}}
+			\subsubsection{\TestsUntested{Drop on Wood}}
+				\TestResultsUsinglongtable
+					\hline
+						\Untested \UniqueTestID &
+						Vibration sweep on X axis &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Vibration sweep on Y axis &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+						\Untested \UniqueTestID &
+						Vibration sweep on Z axis &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+				\end{longtable}
+			\subsubsection{\TestsUntested{Shipping}}
+				\TestResultsUsinglongtable
+					\hline
+						\Untested \UniqueTestID &
+						ISTA 3A &
+						 &
+						 &
+						\PictureOfTest{placeholder} \\
+					\hline
+				\end{longtable}
+	
+	%EMC
+	\newpage
+	\section{\TestsUntested{EMC}}
+		\subsection{\TestsUntested{Radiated Emissions}}
+		\subsection{\TestsUntested{Radiated Immunity}}
+		\subsection{\TestsUntested{Conducted Emissions}}
+		\subsection{\TestsUntested{Conducted Immunity}}
+		\subsection{\TestsUntested{ESD}}
+		\subsection{\TestsUntested{Surge}}
+		\subsection{\TestsUntested{Magnetic Field}}
+		\subsection{\TestsUntested{Flicker}}
+	
+	%Safety
+	\newpage
+	\section{\TestsUntested{Safety}}
+		\subsection{\TestsUntested{Vertical Flame Test}}
+	\end{landscape}
+
+	%Revision history - A high-level list of what and why changes occured between revisions
+	\newpage
+	\section{\TestsUntested{Revision History}}
+	\begin{flushleft}
+		\begin{longtable}{|C{6mm}|C{30mm}|C{20mm}|m{96mm}|}
+				\hline
+					Rev & Released By & Release Date & Notes \\
+				\hline
+			\endfirsthead
+				\multicolumn{4}{c}{\textit{Continued from previous page}} \\
+				\hline
+					Rev & Released By & Release Date & Notes \\
+			\endhead
+				\multicolumn{4}{r}{\textit{Continued on next page}} \\
+			\endfoot
+			\endlastfoot
+			\hline
+				0 &
+				Craig Comberbach &
+				2023-10-30 &
+				Initial Release 
+				Several items have not been tested and by agreement, will not be tested \\
+			\hline
+%				[Rev#] &
+%				[Released By] &
+%				[Release Date] &
+%				Completed tests
+%				\begin{itemize}
+%					\item 
+%				\end{itemize}
+%				
+%				Corrected test inconsistencies
+%				\begin{itemize}
+%					\item 
+%				\end{itemize}
+%
+%				Added new tests
+%				\begin{itemize}
+%					\item 
+%				\end{itemize}
+%				
+%				Modified tests
+%				\begin{itemize}
+%					\item 
+%				\end{itemize}
+%				
+%				Removed tests
+%				\begin{itemize}
+%					\item 
+%				\end{itemize} \\
+%			\hline
+		\end{longtable}
+	\end{flushleft}
+	
+\end{document}
