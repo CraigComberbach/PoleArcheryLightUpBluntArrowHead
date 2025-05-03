@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?application progid="SMath Solver" version="1.3.0.9126"?>
+<worksheet xmlns="http://smath.info/schemas/worksheet/1.0">
+  <settings ppi="96">
+    <identity>
+      <id>91aaf3e6-1101-4a6d-a7ca-3f724547071b</id>
+      <revision>4</revision>
+    </identity>
+    <metadata lang="eng">
+      <author>Craig Comberbach</author>
+    </metadata>
+    <calculation>
+      <precision>4</precision>
+      <exponentialThreshold>5</exponentialThreshold>
+      <trailingZeros>false</trailingZeros>
+      <significantDigitsMode>false</significantDigitsMode>
+      <mixedNumbers>false</mixedNumbers>
+      <roundingMode>0</roundingMode>
+      <approximateEqualAccuracy>0</approximateEqualAccuracy>
+      <fractions>decimal</fractions>
+    </calculation>
+    <pageModel active="false" viewMode="2" printGrid="false" printAreas="true" simpleEqualsOnly="false" printBackgroundImages="true" hideElementsHighlightings="false">
+      <paper id="1" orientation="Portrait" width="850" height="1100" />
+      <margins left="39" right="39" top="49" bottom="49" />
+      <header alignment="Center" color="#a9a9a9">&amp;[DATE] &amp;[TIME] - &amp;[FILENAME]</header>
+      <footer alignment="Center" color="#a9a9a9">&amp;[PAGENUM] / &amp;[COUNT]</footer>
+      <backgrounds />
+    </pageModel>
+    <dependencies>
+      <assembly name="SMath Core" version="1.73.9126.0" guid="a37cba83-b69c-4c71-9992-55ff666763bd" />
+      <assembly name="MathRegion" version="1.73.9126.0" guid="02f1ab51-215b-466e-a74d-5d8b1cf85e8d" />
+      <assembly name="TextRegion" version="1.73.9126.0" guid="485d28c5-349a-48b6-93be-12a35a1c1e39" />
+      <assembly name="AreaRegion" version="1.73.9126.0" guid="4974b228-4974-44cf-8274-bf2936b4a766" />
+    </dependencies>
+  </settings>
+  <regions type="content">
+    <region left="306" top="0" width="146" height="23" color="#000000" fontSize="10">
+      <text lang="eng" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Required Capacitance</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="27" width="121" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">L.Target</e>
+          <e type="operand">377</e>
+          <e type="operand" style="unit">lm</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="54" width="158" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Efficiency</e>
+          <e type="operand">200</e>
+          <e type="operand" style="unit">lm</e>
+          <e type="operand" style="unit">W</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="90" width="231" height="47" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">W.Target</e>
+          <e type="operand">L.Target</e>
+          <e type="operand">Efficiency</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.885</e>
+          <e type="operand" style="unit">W</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="135" width="122" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Duration</e>
+          <e type="operand">30</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="153" width="262" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">E.Total</e>
+          <e type="operand">W.Target</e>
+          <e type="operand">Duration</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">56.55</e>
+          <e type="operand" style="unit">J</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="261" width="132" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">V.Capacitor</e>
+          <e type="operand">5.5</e>
+          <e type="operand" style="unit">V</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="288" width="125" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">V.Residual</e>
+          <e type="operand">0.5</e>
+          <e type="operand" style="unit">V</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="315" width="92" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">η.SMPS</e>
+          <e type="operand">94</e>
+          <e type="operand" style="unit">%</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="360" width="398" height="68" color="#000000" fontSize="10">
+      <math breaking="14">
+        <input>
+          <e type="operand">C.Capacitor</e>
+          <e type="operand">2</e>
+          <e type="operand">E.Total</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">η.SMPS</e>
+          <e type="operand">V.Capacitor</e>
+          <e type="operand">V.Residual</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">4.8128</e>
+          <e type="operand" style="unit">F</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region top="423" color="#000000">
+      <area single="true" collapsed="true" />
+    </region>
+    <region left="315" top="441" width="87" height="23" color="#000000" fontSize="10">
+      <text lang="eng" fontFamily="Arial" fontSize="10">
+        <content>
+          <p>Pad spacing</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="486" width="106" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Pitch</e>
+          <e type="operand">26</e>
+          <e type="operand" style="unit">mm</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="504" width="98" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">PCB</e>
+          <e type="operand">1.6</e>
+          <e type="operand" style="unit">mm</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="522" width="92" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">D.Lead</e>
+          <e type="operand">2</e>
+          <e type="operand" style="unit">mm</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="549" width="80" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Z</e>
+          <e type="operand">Pitch</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="0" top="567" width="176" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">X</e>
+          <e type="operand">PCB</e>
+          <e type="operand">D.Lead</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <contract>
+          <e type="operand" style="unit">mm</e>
+        </contract>
+        <result action="numeric">
+          <e type="operand">3.6</e>
+        </result>
+      </math>
+    </region>
+    <region left="0" top="594" width="224" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">L.Pads</e>
+          <e type="operand">Z</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operand">X</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">-</e>
+          <e type="function" args="1">sqrt</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <contract>
+          <e type="operand" style="unit">mm</e>
+        </contract>
+        <result action="numeric">
+          <e type="operand">25.7496</e>
+        </result>
+      </math>
+    </region>
+  </regions>
+</worksheet>
