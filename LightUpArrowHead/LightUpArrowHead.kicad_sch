@@ -5,148 +5,37 @@
 	(uuid "ba64b5b1-84b3-4b20-8da3-64d65ab70f4b")
 	(paper "A4")
 	(lib_symbols
-		(symbol "Connector_Generic:Conn_01x01"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_01x01"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Conn_01x01_1_1"
-				(rectangle
-					(start -1.27 1.27)
-					(end 1.27 -1.27)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(rectangle
-					(start -1.27 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Device:D"
+		(symbol "Prototype Schematic Symbols - Light Up Arrow:Capacitor Ceramic 10uF 16V X5R 0805"
 			(pin_numbers
 				(hide yes)
 			)
 			(pin_names
-				(offset 1.016)
-				(hide yes)
+				(offset 0.254)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
+			(property "Reference" "C"
+				(at 2.54 2.5401 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
-			(property "Value" "D"
-				(at 0 -2.54 0)
+			(property "Value" "Capacitor Ceramic 10uF 16V X5R 0805"
+				(at 3.81 -1.2699 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
+					(hide yes)
 				)
 			)
-			(property "Footprint" ""
-				(at 0 0 0)
+			(property "Footprint" "Prototype Footprint - Light Up Arrow:Capacitor 0805 (Metric 2012)"
+				(at 0.9652 -3.81 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -163,7 +52,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Diode"
+			(property "Description" "Unpolarized capacitor"
 				(at 0 0 0)
 				(effects
 					(font
@@ -172,7 +61,7 @@
 					(hide yes)
 				)
 			)
-			(property "Sim.Device" "D"
+			(property "Manufacturer" "Samsung Electro-Mechanics"
 				(at 0 0 0)
 				(effects
 					(font
@@ -181,7 +70,7 @@
 					(hide yes)
 				)
 			)
-			(property "Sim.Pins" "1=K 2=A"
+			(property "Manufacturer Part Number" "CL21A106KOQNNNG"
 				(at 0 0 0)
 				(effects
 					(font
@@ -190,7 +79,25 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "diode"
+			(property "Capacitance" "10uF"
+				(at 2.54 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Voltage" "16V"
+				(at 2.54 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
 				(at 0 0 0)
 				(effects
 					(font
@@ -199,7 +106,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+			(property "ki_fp_filters" "C_*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -208,13 +115,13 @@
 					(hide yes)
 				)
 			)
-			(symbol "D_0_1"
+			(symbol "Capacitor Ceramic 10uF 16V X5R 0805_0_1"
 				(polyline
 					(pts
-						(xy -1.27 1.27) (xy -1.27 -1.27)
+						(xy -2.032 0.762) (xy 2.032 0.762)
 					)
 					(stroke
-						(width 0.254)
+						(width 0.508)
 						(type default)
 					)
 					(fill
@@ -223,22 +130,10 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
 					)
 					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy -1.27 0)
-					)
-					(stroke
-						(width 0)
+						(width 0.508)
 						(type default)
 					)
 					(fill
@@ -246,183 +141,10 @@
 					)
 				)
 			)
-			(symbol "D_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Device:R_US"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "R"
-				(at 2.54 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "R_US"
-				(at -2.54 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 1.016 -0.254 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Resistor, US symbol"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "R res resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "R_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "R_US_0_1"
-				(polyline
-					(pts
-						(xy 0 2.286) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.286) (xy 1.016 1.905) (xy 0 1.524) (xy -1.016 1.143) (xy 0 0.762)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0.762) (xy 1.016 0.381) (xy 0 0) (xy -1.016 -0.381) (xy 0 -0.762)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -0.762) (xy 1.016 -1.143) (xy 0 -1.524) (xy -1.016 -1.905) (xy 0 -2.286)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -2.286) (xy 0 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "R_US_1_1"
+			(symbol "Capacitor Ceramic 10uF 16V X5R 0805_1_1"
 				(pin passive line
 					(at 0 3.81 270)
-					(length 1.27)
+					(length 2.794)
 					(name "~"
 						(effects
 							(font
@@ -440,7 +162,7 @@
 				)
 				(pin passive line
 					(at 0 -3.81 90)
-					(length 1.27)
+					(length 2.794)
 					(name "~"
 						(effects
 							(font
@@ -667,6 +389,222 @@
 								(size 1.27 1.27)
 							)
 						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Prototype Schematic Symbols - Light Up Arrow:Edge Plating 3mm"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 2.54 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Edge Connector"
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "Prototype Footprint - Light Up Arrow:Edge Plating 3mm"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 1x1"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Edge Plating 3mm_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -1.27)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Prototype Schematic Symbols - Light Up Arrow:Fiducial"
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "FID"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "Fiducial:Fiducial_1mm_Mask3mm"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Fiducial_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 0)
+						(type default)
+						(color 0 0 0 1)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 0)
+						(type default)
+						(color 194 194 0 1)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 2.54)
+					(stroke
+						(width 0)
+						(type default)
+						(color 0 0 0 1)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 2.54)
+					(stroke
+						(width 0)
+						(type default)
+						(color 194 194 194 1)
+					)
+					(fill
+						(type color)
+						(color 194 194 194 1)
 					)
 				)
 			)
@@ -1088,6 +1026,616 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Prototype Schematic Symbols - Light Up Arrow:MOSFET N-Channel 30V 3.6A SOT-23-3"
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 5.08 0.635 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "MOSFET N-Channel 30V 3.6A SOT-23-3"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+				(at 5.08 -1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "3.6A Id, 30V Vds, N-Channel MOSFET, SOT-23"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "Diodes"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "DMG3406L"
+				(at 10.16 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "N-Channel MOSFET"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MOSFET N-Channel 30V 3.6A SOT-23-3_0_1"
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.127 -2.54) (xy -2.667 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "MOSFET N-Channel 30V 3.6A SOT-23-3_1_1"
+				(text "N"
+					(at 4.3286 0.0983 0)
+					(effects
+						(font
+							(size 0.3048 0.3048)
+							(color 0 0 0 1)
+						)
+					)
+				)
+				(pin input line
+					(at -5.08 -2.54 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Prototype Schematic Symbols - Light Up Arrow:MOSFET P-Channel 30V 3.8A SOT-23-3"
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 0.635 5.08 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "DMP3099L"
+				(at 2.54 5.08 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+				(at 5.08 -1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3099L.pdf"
+				(at 5.08 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "-3.8A Id, -30V Vds, P-Channel MOSFET, SOT-23"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "P-Channel MOSFET"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MOSFET P-Channel 30V 3.8A SOT-23-3_0_1"
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 0.762) (xy 1.27 0.762)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.7539 0.7493) (xy 0.7539 3.2893) (xy 4.3099 3.2893) (xy 4.3099 0.7493)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0.762 2.54)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.032 0.762) (xy 3.048 0.762)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.286) (xy 2.159 1.27) (xy 2.921 1.27) (xy 2.54 2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.9103 3.3007) (xy 2.2753 2.9197) (xy 2.2753 3.6817) (xy 2.9103 3.3007)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.921 2.921) (xy 2.921 3.683)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 0.762) (xy 4.826 0.762)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 4.318 2.54)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 2.54) (xy 2.54 2.54) (xy 2.54 0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 0) (xy 5.08 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "MOSFET P-Channel 30V 3.8A SOT-23-3_1_1"
+				(text "P"
+					(at 2.5974 3.9266 900)
+					(effects
+						(font
+							(size 0.3048 0.3048)
+							(color 0 0 0 1)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 2.54 0)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 5.08 -5.08 90)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 2.54 180)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Prototype Schematic Symbols - Light Up Arrow:Regulator SMPS Boost Vin=0.5-5.5V Vout=1.8-5.5V 3MHz Options{colon} Auto-Pass Through, True Off"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1448,7 +1996,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Prototype Schematic Symbols - Light Up Arrow:Resistor 1k 0402 1%"
+		(symbol "Prototype Schematic Symbols - Light Up Arrow:Resistor 3.01k 0603 1%"
 			(pin_numbers
 				(hide yes)
 			)
@@ -1465,7 +2013,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "[Resistance] [Footprint] [Tolerance]"
+			(property "Value" "${SIM.PARAMS}"
 				(at 1.27 -7.874 0)
 				(effects
 					(font
@@ -1474,7 +2022,7 @@
 					(hide yes)
 				)
 			)
-			(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(property "Footprint" "Prototype Footprint - Light Up Arrow:Resistor 0603 (Metric 1608)"
 				(at 0 1.27 0)
 				(effects
 					(font
@@ -1501,7 +2049,7 @@
 					(hide yes)
 				)
 			)
-			(property "Manufacturer" ""
+			(property "Manufacturer" "Stack Pole"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1510,7 +2058,7 @@
 					(hide yes)
 				)
 			)
-			(property "Manufacturer Part Number" ""
+			(property "Manufacturer Part Number" "RMCF0603FT3K01"
 				(at -6.35 1.27 0)
 				(effects
 					(font
@@ -1519,7 +2067,7 @@
 					(hide yes)
 				)
 			)
-			(property "Resistance" "?kΩ"
+			(property "Resistance" "3.01kΩ"
 				(at 2.54 1.2701 0)
 				(do_not_autoplace)
 				(effects
@@ -1529,7 +2077,7 @@
 					(justify left)
 				)
 			)
-			(property "Package" "0402"
+			(property "Package" "0603"
 				(at 2.54 -3.81 0)
 				(do_not_autoplace)
 				(effects
@@ -1558,7 +2106,43 @@
 					(hide yes)
 				)
 			)
-			(symbol "Resistor 1k 0402 1%_0_1"
+			(property "Sim.Device" "R"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Type" "="
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Pins" "1=+ 2=-"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Params" "r=3.01k"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Resistor 3.01k 0603 1%_0_1"
 				(polyline
 					(pts
 						(xy 0.0003 2.5396) (xy 0.8469 2.1163) (xy -0.8463 1.2697) (xy 0.8469 0.4231) (xy -0.8463 -0.4235)
@@ -1573,7 +2157,7 @@
 					)
 				)
 			)
-			(symbol "Resistor 1k 0402 1%_1_1"
+			(symbol "Resistor 3.01k 0603 1%_1_1"
 				(pin bidirectional line
 					(at 0 5.08 270)
 					(length 2.54)
@@ -1752,72 +2336,124 @@
 		)
 	)
 	(junction
-		(at 167.64 78.74)
+		(at 231.14 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "00c8e2ea-3c05-4074-bfd5-d442181dc80c")
 	)
 	(junction
-		(at 177.8 78.74)
+		(at 220.98 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "046d5376-e075-4698-88d4-fa28fdd38f46")
+		(uuid "0d549902-fa72-46ca-a21b-814e327bb9aa")
 	)
 	(junction
-		(at 91.44 78.74)
+		(at 88.9 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "2bd063ce-66c5-45cf-8457-630efe1183fc")
+		(uuid "19261ced-3b93-4ae9-b002-f4cfadaa5af1")
 	)
 	(junction
-		(at 43.18 91.44)
+		(at 63.5 101.6)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "39e1c87f-7174-4d42-8c56-50c5896094a6")
+		(uuid "2d5db438-9c3a-43b5-874b-274943421402")
 	)
 	(junction
-		(at 104.14 83.82)
+		(at 63.5 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2fefa5ac-3704-4f0d-a7af-ab18d6612a82")
+	)
+	(junction
+		(at 200.66 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "317d3f39-f4b4-409d-b00f-1b60d41108f8")
+	)
+	(junction
+		(at 88.9 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "36673ff8-5481-4d28-b81b-82d884a4272f")
+	)
+	(junction
+		(at 127 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4b781da9-45e6-44ee-bc90-78b23e6c7e74")
+	)
+	(junction
+		(at 73.66 109.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5748600f-2c11-4525-b1c0-1b36199c0b04")
+	)
+	(junction
+		(at 88.9 109.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "75c35503-1354-48c2-811c-e282b3ef5c3d")
+	)
+	(junction
+		(at 137.16 91.44)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7657d586-9e1b-4a87-a1e0-901fa510820f")
 	)
 	(junction
-		(at 53.34 93.98)
+		(at 106.68 124.46)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7b6d2cf9-3a72-4ccd-8c2f-c890af508c38")
+		(uuid "7e8d31ab-11e7-4925-bc52-0db703422633")
 	)
 	(junction
-		(at 104.14 78.74)
+		(at 137.16 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "95d5704e-5f4f-4d2f-a0da-5b9a28bade45")
 	)
 	(junction
-		(at 48.26 111.76)
+		(at 88.9 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "f44a0759-5f45-4cf5-8125-a0adfadc561c")
+		(uuid "ae313c19-7ca3-4030-8916-24a330357c15")
 	)
 	(junction
-		(at 53.34 78.74)
+		(at 106.68 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "fb08f383-e573-4452-bf47-afeaa489fd77")
+		(uuid "b6508ccb-4b69-4c50-aebd-5e9f7442511e")
+	)
+	(junction
+		(at 78.74 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d7ccb8f8-9ea4-4339-b184-82ffabc15d82")
 	)
 	(wire
 		(pts
-			(xy 53.34 87.63) (xy 53.34 93.98)
+			(xy 106.68 86.36) (xy 127 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0350fbd1-3e9c-47cb-9d0f-c8df36f80e5e")
+		(uuid "074b2a8f-c00e-47e8-9a9a-1de30d1b34bc")
 	)
 	(wire
 		(pts
-			(xy 104.14 88.9) (xy 104.14 83.82)
+			(xy 63.5 99.06) (xy 63.5 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "07da2560-1894-48bc-b52d-816425336c37")
+	)
+	(wire
+		(pts
+			(xy 137.16 96.52) (xy 137.16 91.44)
 		)
 		(stroke
 			(width 0)
@@ -1827,7 +2463,7 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 88.9) (xy 167.64 91.44)
+			(xy 220.98 96.52) (xy 220.98 99.06)
 		)
 		(stroke
 			(width 0)
@@ -1837,7 +2473,17 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 113.03) (xy 167.64 116.84)
+			(xy 88.9 124.46) (xy 88.9 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e3f2f85-72bf-4817-8e21-00d8ad5bd635")
+	)
+	(wire
+		(pts
+			(xy 220.98 106.68) (xy 220.98 111.76)
 		)
 		(stroke
 			(width 0)
@@ -1847,27 +2493,17 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 99.06) (xy 187.96 105.41)
+			(xy 220.98 86.36) (xy 231.14 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "185c391d-e5d1-443a-aaad-8ea8f798a9de")
+		(uuid "140ef460-5855-4c61-b255-ab3d37b423f1")
 	)
 	(wire
 		(pts
-			(xy 187.96 113.03) (xy 187.96 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1a60113f-60a2-45ca-a6cb-c423787138be")
-	)
-	(wire
-		(pts
-			(xy 177.8 88.9) (xy 177.8 91.44)
+			(xy 231.14 96.52) (xy 231.14 99.06)
 		)
 		(stroke
 			(width 0)
@@ -1877,7 +2513,7 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 78.74) (xy 177.8 78.74)
+			(xy 231.14 86.36) (xy 241.3 86.36)
 		)
 		(stroke
 			(width 0)
@@ -1887,37 +2523,47 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 78.74) (xy 77.47 78.74)
+			(xy 200.66 97.79) (xy 200.66 101.6)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "22bea527-d9ee-4407-a4f2-d77e537e0691")
+		(uuid "255a2800-558c-4087-a5e0-2ed8f391143a")
 	)
 	(wire
 		(pts
-			(xy 167.64 99.06) (xy 167.64 105.41)
+			(xy 63.5 124.46) (xy 88.9 124.46)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2fa64f73-ff0e-463a-85e7-f36ccc496ca2")
+		(uuid "2fee87de-d610-47e0-ac90-2ea788be629f")
 	)
 	(wire
 		(pts
-			(xy 53.34 105.41) (xy 53.34 111.76)
+			(xy 182.88 86.36) (xy 200.66 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "320e2660-ff20-417f-aec7-ede3b1a47aaa")
+		(uuid "32bdc259-8b5b-4ee1-8de4-97583b458a9e")
 	)
 	(wire
 		(pts
-			(xy 104.14 83.82) (xy 104.14 78.74)
+			(xy 88.9 86.36) (xy 106.68 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33af4ebf-6224-4c11-bce1-1ddfbe8ecda3")
+	)
+	(wire
+		(pts
+			(xy 137.16 91.44) (xy 137.16 86.36)
 		)
 		(stroke
 			(width 0)
@@ -1927,27 +2573,27 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 78.74) (xy 53.34 78.74)
+			(xy 88.9 124.46) (xy 106.68 124.46)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3839320d-18c1-42a6-bd02-fcaac3c47dda")
+		(uuid "3bf701d9-c017-42cf-a046-008219c995e4")
 	)
 	(wire
 		(pts
-			(xy 177.8 99.06) (xy 177.8 105.41)
+			(xy 200.66 86.36) (xy 220.98 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3ed00ec0-9420-4fe2-addb-ae330bd84989")
+		(uuid "3c67172a-d5a6-4081-8015-685fd41258c6")
 	)
 	(wire
 		(pts
-			(xy 152.4 96.52) (xy 152.4 99.06)
+			(xy 185.42 104.14) (xy 185.42 106.68)
 		)
 		(stroke
 			(width 0)
@@ -1957,7 +2603,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 78.74) (xy 91.44 83.82)
+			(xy 106.68 86.36) (xy 106.68 101.6)
 		)
 		(stroke
 			(width 0)
@@ -1967,27 +2613,17 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 105.41) (xy 43.18 111.76)
+			(xy 53.34 106.68) (xy 88.9 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "53011116-559c-46cc-897e-ef5aec258bb6")
+		(uuid "4ce08ae5-71a8-4c45-a858-b9f100c9b671")
 	)
 	(wire
 		(pts
-			(xy 177.8 78.74) (xy 187.96 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "56dc558f-9071-41c6-8bb0-5badd7a001eb")
-	)
-	(wire
-		(pts
-			(xy 119.38 78.74) (xy 124.46 78.74)
+			(xy 152.4 86.36) (xy 157.48 86.36)
 		)
 		(stroke
 			(width 0)
@@ -1997,7 +2633,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 83.82) (xy 149.86 83.82)
+			(xy 185.42 91.44) (xy 182.88 91.44)
 		)
 		(stroke
 			(width 0)
@@ -2007,27 +2643,37 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 78.74) (xy 43.18 80.01)
+			(xy 63.5 101.6) (xy 63.5 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6c82be72-14fb-4f88-b2ad-fd478e41be0c")
+		(uuid "64695e6c-2cb2-48b6-b7f4-95ea5fbe68ec")
 	)
 	(wire
 		(pts
-			(xy 43.18 91.44) (xy 43.18 97.79)
+			(xy 78.74 101.6) (xy 78.74 119.38)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "76f3bf1f-a556-4f3c-980f-e5a5afe97456")
+		(uuid "73c8bdb4-d94e-43cc-b47a-fb5da5ac1293")
 	)
 	(wire
 		(pts
-			(xy 187.96 78.74) (xy 187.96 81.28)
+			(xy 78.74 91.44) (xy 81.28 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7602bc4f-3e14-4492-9862-611771a8f6a1")
+	)
+	(wire
+		(pts
+			(xy 241.3 86.36) (xy 241.3 88.9)
 		)
 		(stroke
 			(width 0)
@@ -2037,7 +2683,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 86.36) (xy 152.4 83.82)
+			(xy 185.42 93.98) (xy 185.42 91.44)
 		)
 		(stroke
 			(width 0)
@@ -2047,7 +2693,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 88.9) (xy 187.96 91.44)
+			(xy 241.3 96.52) (xy 241.3 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2057,27 +2703,27 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 78.74) (xy 91.44 78.74)
+			(xy 127 86.36) (xy 137.16 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7ca3bfe9-9893-4934-a936-3c4242b9fe5f")
+		(uuid "7e5a357f-b2d4-4d08-9e94-0129b3647f60")
 	)
 	(wire
 		(pts
-			(xy 43.18 87.63) (xy 43.18 91.44)
+			(xy 71.12 91.44) (xy 73.66 91.44)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "811bb12f-1741-4663-b488-3b4fb7fae7ae")
+		(uuid "81e5137a-bda3-4c4c-9fb9-81b2f02ded9a")
 	)
 	(wire
 		(pts
-			(xy 124.46 83.82) (xy 104.14 83.82)
+			(xy 157.48 91.44) (xy 137.16 91.44)
 		)
 		(stroke
 			(width 0)
@@ -2087,7 +2733,27 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 78.74) (xy 177.8 81.28)
+			(xy 78.74 101.6) (xy 78.74 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "859171f3-d43f-493f-a042-06f99cac70a7")
+	)
+	(wire
+		(pts
+			(xy 53.34 104.14) (xy 63.5 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89245c27-f747-4fc0-b7aa-b8c9bb813507")
+	)
+	(wire
+		(pts
+			(xy 231.14 86.36) (xy 231.14 88.9)
 		)
 		(stroke
 			(width 0)
@@ -2097,7 +2763,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 88.9) (xy 91.44 91.44)
+			(xy 106.68 106.68) (xy 106.68 124.46)
 		)
 		(stroke
 			(width 0)
@@ -2107,17 +2773,57 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 78.74) (xy 104.14 78.74)
+			(xy 73.66 91.44) (xy 73.66 109.22)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "99786eaf-08ed-4f3f-8a15-7c6751128dfe")
+		(uuid "92942c4b-3e65-4cc7-9291-8483ed2314b3")
 	)
 	(wire
 		(pts
-			(xy 104.14 88.9) (xy 124.46 88.9)
+			(xy 88.9 99.06) (xy 88.9 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93fd489a-4069-497a-9e6f-7a52c32813f8")
+	)
+	(wire
+		(pts
+			(xy 88.9 86.36) (xy 88.9 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a5edeac-7899-4389-8db9-f83724ed8205")
+	)
+	(wire
+		(pts
+			(xy 241.3 106.68) (xy 241.3 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2d0598f-c5ed-4458-b2d5-2db617ea2d45")
+	)
+	(wire
+		(pts
+			(xy 127 86.36) (xy 127 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6f6b0ee-5915-4c06-94eb-f8c59efc1972")
+	)
+	(wire
+		(pts
+			(xy 137.16 96.52) (xy 157.48 96.52)
 		)
 		(stroke
 			(width 0)
@@ -2127,27 +2833,87 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 113.03) (xy 177.8 116.84)
+			(xy 63.5 86.36) (xy 88.9 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b1206060-3ca2-47fd-beea-ad3f551198a4")
+		(uuid "ae2637e2-8beb-4420-b78c-1f9da777eb4d")
 	)
 	(wire
 		(pts
-			(xy 33.02 91.44) (xy 43.18 91.44)
+			(xy 73.66 109.22) (xy 88.9 109.22)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b44e370b-a2f3-402c-ab1d-de4c704e38c0")
+		(uuid "b05349f2-210b-42ed-9450-56d29f03b2c5")
 	)
 	(wire
 		(pts
-			(xy 121.92 93.98) (xy 121.92 99.06)
+			(xy 127 97.79) (xy 127 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b21bb68e-a9cd-45cd-83e7-3666e413c543")
+	)
+	(wire
+		(pts
+			(xy 88.9 106.68) (xy 88.9 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b26f37f7-cc62-4647-9909-6728a0e91c37")
+	)
+	(wire
+		(pts
+			(xy 73.66 119.38) (xy 71.12 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b472277c-d374-414a-bc89-369e7bcfd8f1")
+	)
+	(wire
+		(pts
+			(xy 200.66 86.36) (xy 200.66 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b599002a-702b-4c2a-9f12-8b94aaa36639")
+	)
+	(wire
+		(pts
+			(xy 73.66 109.22) (xy 73.66 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b82c2ab1-aa3b-4324-9c21-2450ea7fcb30")
+	)
+	(wire
+		(pts
+			(xy 63.5 121.92) (xy 63.5 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd721a2d-3c16-4a35-8e7f-20a93ebd6920")
+	)
+	(wire
+		(pts
+			(xy 154.94 101.6) (xy 154.94 106.68)
 		)
 		(stroke
 			(width 0)
@@ -2157,17 +2923,37 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 93.98) (xy 53.34 93.98)
+			(xy 231.14 106.68) (xy 231.14 111.76)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "cd01647e-38f7-40b3-8521-e3a965940477")
+		(uuid "c7b09bbf-49ac-44d2-affb-5cb4d5293836")
 	)
 	(wire
 		(pts
-			(xy 104.14 78.74) (xy 109.22 78.74)
+			(xy 63.5 101.6) (xy 78.74 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d2dc4fcf-15ef-44fa-bcae-9e2e752bb422")
+	)
+	(wire
+		(pts
+			(xy 63.5 104.14) (xy 63.5 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7a359ef-e8ea-4480-a5e2-d7512eb4519f")
+	)
+	(wire
+		(pts
+			(xy 137.16 86.36) (xy 142.24 86.36)
 		)
 		(stroke
 			(width 0)
@@ -2177,47 +2963,17 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 111.76) (xy 48.26 111.76)
+			(xy 63.5 88.9) (xy 63.5 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e44f00b8-b765-4528-a935-2d0d024f809a")
+		(uuid "e345c164-6608-494d-930d-5fecf7aa275d")
 	)
 	(wire
 		(pts
-			(xy 167.64 78.74) (xy 149.86 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ec31c4dd-db9c-428b-91c1-a145f64c434f")
-	)
-	(wire
-		(pts
-			(xy 53.34 111.76) (xy 48.26 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f2be13c0-dbf5-498c-b9aa-479abbd78c65")
-	)
-	(wire
-		(pts
-			(xy 53.34 93.98) (xy 53.34 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f77732e7-9cab-4040-b996-d31e4ab8d1e0")
-	)
-	(wire
-		(pts
-			(xy 167.64 78.74) (xy 167.64 81.28)
+			(xy 220.98 86.36) (xy 220.98 88.9)
 		)
 		(stroke
 			(width 0)
@@ -2227,7 +2983,37 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 93.98) (xy 121.92 93.98)
+			(xy 88.9 109.22) (xy 88.9 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd404cbe-9389-49f5-b59f-f632337449da")
+	)
+	(wire
+		(pts
+			(xy 106.68 124.46) (xy 106.68 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd7e587f-39b3-439c-ac92-70d28a650524")
+	)
+	(wire
+		(pts
+			(xy 81.28 119.38) (xy 78.74 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fda6816b-4dcb-4276-b0ee-8a976091288a")
+	)
+	(wire
+		(pts
+			(xy 157.48 101.6) (xy 154.94 101.6)
 		)
 		(stroke
 			(width 0)
@@ -2235,85 +3021,49 @@
 		)
 		(uuid "fe97f268-972b-4125-ac4e-c4f932ee614f")
 	)
-	(wire
-		(pts
-			(xy 53.34 78.74) (xy 53.34 80.01)
+	(label "0.5-5V"
+		(at 129.54 86.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
 		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ff6ed3d6-d23a-4908-bd93-673c87792603")
+		(uuid "32502867-5770-429c-8f8c-acf7e6502477")
 	)
-	(symbol
-		(lib_id "power:GNDREF")
-		(at 48.26 111.76 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "07e4caaf-f935-4691-be04-0444e52305b2")
-		(property "Reference" "#PWR09"
-			(at 48.26 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
+	(label "5.5V"
+		(at 215.9 86.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left bottom)
 		)
-		(property "Value" "GND"
-			(at 48.26 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+		(uuid "ae3d8a1a-1aad-4c47-b9c1-7d8fa43960f5")
+	)
+	(label "Vin-"
+		(at 53.34 106.68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left bottom)
 		)
-		(property "Footprint" ""
-			(at 48.26 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
+		(uuid "c496f5cb-5cf8-4d83-8b53-6d689a9be24c")
+	)
+	(label "Vin+"
+		(at 53.34 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left bottom)
 		)
-		(property "Datasheet" ""
-			(at 48.26 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDREF\" , reference supply ground"
-			(at 48.26 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3e21a991-fb05-4f76-93f8-ad941e8bdfce")
-		)
-		(instances
-			(project "LightUpArrowHead"
-				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
-					(reference "#PWR09")
-					(unit 1)
-				)
-			)
-		)
+		(uuid "cf321130-2760-4666-bb3c-43a1f809bea4")
 	)
 	(symbol
 		(lib_id "Prototype Schematic Symbols - Light Up Arrow:LED Green (525nm) 2.9V 20mA 16000mcd SMD-2")
-		(at 167.64 96.52 0)
+		(at 220.98 104.14 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2321,8 +3071,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "09f8b890-9593-40df-9637-d87c7bd8f60a")
-		(property "Reference" "D4"
-			(at 169.545 93.98 0)
+		(property "Reference" "D2"
+			(at 222.885 101.6 0)
 			(do_not_autoplace yes)
 			(effects
 				(font
@@ -2332,7 +3082,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 171.45 98.1074 0)
+			(at 224.79 105.7274 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2341,8 +3091,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Vishay VLD.1232G Family LED"
-			(at 167.64 95.25 90)
+		(property "Footprint" "Prototype Footprint - Light Up Arrow:Vishay VLD.1232G Family LED - Right Angle Edge Mount (Non-Standard)"
+			(at 220.98 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2351,7 +3101,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/80003/vldb1232.pdf"
-			(at 167.64 95.25 90)
+			(at 220.98 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2360,7 +3110,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 167.64 93.98 90)
+			(at 220.98 101.6 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2369,7 +3119,7 @@
 			)
 		)
 		(property "Manufacturer" "Vishay"
-			(at 167.64 95.25 90)
+			(at 220.98 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2378,7 +3128,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "VLDTG1232G-08"
-			(at 167.64 95.25 90)
+			(at 220.98 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2387,7 +3137,7 @@
 			)
 		)
 		(property "Wavelength" "525nm"
-			(at 169.545 96.52 0)
+			(at 222.885 104.14 0)
 			(do_not_autoplace yes)
 			(effects
 				(font
@@ -2405,42 +3155,40 @@
 		(instances
 			(project ""
 				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
-					(reference "D4")
+					(reference "D2")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
-		(at 187.96 109.22 180)
+		(lib_id "Prototype Schematic Symbols - Light Up Arrow:Edge Plating 3mm")
+		(at 48.26 104.14 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1a58aa14-779e-4b5b-a038-cee2228cf316")
-		(property "Reference" "R6"
-			(at 190.5 107.9499 0)
+		(uuid "134e1cb7-2116-4e00-923f-69eaa387456e")
+		(property "Reference" "J1"
+			(at 44.45 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Value" "R_US"
-			(at 190.5 110.4899 0)
+		(property "Value" "Edge Connector"
+			(at 48.26 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(hide yes)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 186.944 108.966 90)
+		(property "Footprint" "Prototype Footprint - Light Up Arrow:Edge Plating 3mm"
+			(at 48.26 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2449,7 +3197,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 187.96 109.22 0)
+			(at 48.26 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2457,25 +3205,88 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, US symbol"
-			(at 187.96 109.22 0)
+		(property "Description" "Generic connector, single row, 1x1"
+			(at 48.26 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(pin "2"
-			(uuid "f65e756b-ecbf-4971-99d5-ea63fb97f65f")
 		)
 		(pin "1"
-			(uuid "8ac756d4-7afb-4305-889b-1106aa8b4d80")
+			(uuid "5cb440e7-d1ce-40ea-b268-02c8e790d94d")
+		)
+		(instances
+			(project ""
+				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GNDREF")
+		(at 200.66 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "168b4fc7-210b-48cb-8a79-428b5da5caac")
+		(property "Reference" "#PWR010"
+			(at 200.66 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 200.66 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 200.66 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 200.66 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDREF\" , reference supply ground"
+			(at 200.66 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d88e2c56-930e-4bdc-9d71-98d38361230e")
 		)
 		(instances
 			(project "LightUpArrowHead"
 				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
-					(reference "R6")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -2483,7 +3294,7 @@
 	)
 	(symbol
 		(lib_id "Prototype Schematic Symbols - Light Up Arrow:Regulator SMPS Boost Vin=0.5-5.5V Vout=1.8-5.5V 3MHz Options{colon} Auto-Pass Through, True Off")
-		(at 127 76.2 0)
+		(at 160.02 83.82 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2492,7 +3303,7 @@
 		(fields_autoplaced yes)
 		(uuid "1e8e6dca-9ef3-46d1-ae99-0072b43fa595")
 		(property "Reference" "U1"
-			(at 127 74.93 0)
+			(at 160.02 82.55 0)
 			(do_not_autoplace yes)
 			(effects
 				(font
@@ -2502,7 +3313,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 137.16 74.93 0)
+			(at 170.18 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2510,7 +3321,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-563"
-			(at 134.62 73.66 0)
+			(at 167.64 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2518,8 +3329,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 134.62 73.66 0)
+		(property "Datasheet" "https://www.ti.com/lit/gpn/tps61299-q1"
+			(at 167.64 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2528,7 +3339,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 134.62 73.66 0)
+			(at 167.64 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2537,7 +3348,7 @@
 			)
 		)
 		(property "Manufacturer" "Texas Instruments"
-			(at 127 76.2 0)
+			(at 160.02 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2546,7 +3357,7 @@
 			)
 		)
 		(property "MPN" "TPS61299-Q1"
-			(at 147.32 97.79 0)
+			(at 180.34 105.41 0)
 			(do_not_autoplace yes)
 			(effects
 				(font
@@ -2583,8 +3394,279 @@
 		)
 	)
 	(symbol
+		(lib_id "Prototype Schematic Symbols - Light Up Arrow:Capacitor Ceramic 10uF 16V X5R 0805")
+		(at 127 93.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "25642fbf-16ca-4e69-9e0c-0a94b73a4d91")
+		(property "Reference" "C2"
+			(at 130.81 91.4399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Capacitor Ceramic 10uF 16V X5R 0805"
+			(at 130.81 95.2499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Prototype Footprint - Light Up Arrow:Capacitor 0805 (Metric 2012)"
+			(at 127.9652 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 127 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 127 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 127 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "CL21A106KOQNNNG"
+			(at 127 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Capacitance" "10uF"
+			(at 130.81 93.9799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "16V"
+			(at 130.81 96.5199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "acdf8d0c-1e6b-4fdf-b2fb-0a72adffdcdd")
+		)
+		(pin "2"
+			(uuid "80ba9c0c-4da4-4baf-8afe-be435a283b72")
+		)
+		(instances
+			(project ""
+				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
+					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Prototype Schematic Symbols - Light Up Arrow:Resistor 3.01k 0603 1%")
+		(at 185.42 99.06 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "28c45ac8-0c08-401b-9a83-37010fa30998")
+		(property "Reference" "R1"
+			(at 187.96 95.2499 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "${SIM.PARAMS}"
+			(at 186.69 106.934 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Prototype Footprint - Light Up Arrow:Resistor 0603 (Metric 1608)"
+			(at 185.42 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 185.42 98.044 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 185.42 98.044 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Stack Pole"
+			(at 185.42 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "RMCF0603FT3K01"
+			(at 179.07 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Resistance" "3.01kΩ"
+			(at 187.96 97.7899 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Package" "0603"
+			(at 187.96 102.87 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 187.96 100.3299 0)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Technology" "SMT"
+			(at 184.15 108.204 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "R"
+			(at 185.42 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "="
+			(at 185.42 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=+ 2=-"
+			(at 185.42 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Params" "r=3.01k"
+			(at 185.42 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "48e1e2ea-deb3-423f-b50d-b1fe16eabf4d")
+		)
+		(pin "2"
+			(uuid "19ffc23d-ffd8-48f6-b1b1-66435d91be27")
+		)
+		(instances
+			(project ""
+				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Prototype Schematic Symbols - Light Up Arrow:LED Green (525nm) 2.9V 20mA 16000mcd SMD-2")
-		(at 167.64 86.36 0)
+		(at 220.98 93.98 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2593,7 +3675,7 @@
 		(fields_autoplaced yes)
 		(uuid "37e82e44-1732-4492-84d4-12ad71b90a4c")
 		(property "Reference" "D1"
-			(at 169.545 83.82 0)
+			(at 222.885 91.44 0)
 			(do_not_autoplace yes)
 			(effects
 				(font
@@ -2603,7 +3685,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 171.45 87.9474 0)
+			(at 224.79 95.5674 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2613,7 +3695,7 @@
 			)
 		)
 		(property "Footprint" "Prototype Footprint - Light Up Arrow:Vishay VLD.1232G Family LED - Right Angle Edge Mount (Non-Standard)"
-			(at 167.64 85.09 90)
+			(at 220.98 92.71 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2622,7 +3704,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/80003/vldb1232.pdf"
-			(at 167.64 85.09 90)
+			(at 220.98 92.71 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2631,7 +3713,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 167.64 83.82 90)
+			(at 220.98 91.44 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2640,7 +3722,7 @@
 			)
 		)
 		(property "Manufacturer" "Vishay"
-			(at 167.64 85.09 90)
+			(at 220.98 92.71 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2649,7 +3731,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "VLDTG1232G-08"
-			(at 167.64 85.09 90)
+			(at 220.98 92.71 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2658,7 +3740,7 @@
 			)
 		)
 		(property "Wavelength" "525nm"
-			(at 169.545 86.36 0)
+			(at 222.885 93.98 0)
 			(do_not_autoplace yes)
 			(effects
 				(font
@@ -2684,7 +3766,7 @@
 	)
 	(symbol
 		(lib_id "power:GNDREF")
-		(at 152.4 99.06 0)
+		(at 185.42 106.68 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2693,7 +3775,7 @@
 		(fields_autoplaced yes)
 		(uuid "4517bfd8-c7fe-498d-acbf-ceaf657f79a9")
 		(property "Reference" "#PWR05"
-			(at 152.4 105.41 0)
+			(at 185.42 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2702,7 +3784,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 152.4 104.14 0)
+			(at 185.42 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2710,7 +3792,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 152.4 99.06 0)
+			(at 185.42 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2719,7 +3801,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 152.4 99.06 0)
+			(at 185.42 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2728,7 +3810,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDREF\" , reference supply ground"
-			(at 152.4 99.06 0)
+			(at 185.42 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2749,169 +3831,94 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
-		(at 81.28 78.74 90)
+		(lib_id "Prototype Schematic Symbols - Light Up Arrow:MOSFET P-Channel 30V 3.8A SOT-23-3")
+		(at 86.36 96.52 270)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "4e99bbbe-15f1-43aa-9993-7f03dc51b8cf")
-		(property "Reference" "R3"
-			(at 81.28 72.39 90)
+		(uuid "4912e509-a410-4031-8850-924502a756af")
+		(property "Reference" "Q2"
+			(at 91.44 92.7099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "R_US"
-			(at 81.28 74.93 90)
+		(property "Value" "DMP3099L"
+			(at 91.44 95.2499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 81.534 77.724 90)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 84.455 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3099L.pdf"
+			(at 82.55 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "-3.8A Id, -30V Vds, P-Channel MOSFET, SOT-23"
+			(at 86.36 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(property "Datasheet" "~"
-			(at 81.28 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, US symbol"
-			(at 81.28 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "399b77bd-7f33-4e09-b53b-ae01ac4f176f")
 		)
 		(pin "1"
-			(uuid "e2ecd85f-8ce4-4ad5-8fa6-e3bca5f3cb1f")
+			(uuid "dc84ef2a-6fbd-454e-8f11-d0b9ed2d41d1")
+		)
+		(pin "2"
+			(uuid "d19680f7-d6a3-4baf-822f-a533e0758295")
+		)
+		(pin "3"
+			(uuid "cd38ed87-bbb4-45f3-bfeb-111dbff57264")
 		)
 		(instances
 			(project ""
 				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
-					(reference "R3")
+					(reference "Q2")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x01")
-		(at 27.94 93.98 0)
-		(mirror y)
+		(lib_id "Prototype Schematic Symbols - Light Up Arrow:Fiducial")
+		(at 30.48 185.42 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "5f20c739-5e29-4174-8285-d911a7a62ea5")
-		(property "Reference" "J2"
-			(at 25.4 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_01x01"
-			(at 27.94 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded"
-			(at 27.94 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 27.94 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 27.94 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "99a0cc29-7a62-497c-a9bd-39f717f0d41a")
-		)
-		(instances
-			(project "LightUpArrowHead"
-				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
-					(reference "J2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D")
-		(at 43.18 83.82 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "67935577-6d69-4fce-80e3-f2dd6bf080a5")
-		(property "Reference" "D14"
-			(at 45.72 82.5499 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "D"
-			(at 45.72 85.0899 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SMA"
-			(at 43.18 83.82 0)
+		(uuid "5d5eb160-f406-427e-8c94-d7918c453346")
+		(property "Reference" "FID1"
+			(at 30.48 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2919,8 +3926,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 43.18 83.82 0)
+		(property "Value" "~"
+			(at 30.48 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2928,147 +3935,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Diode"
-			(at 43.18 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 43.18 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 43.18 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6f658ab7-41a0-45ef-b1cc-7ae46b022022")
-		)
-		(pin "2"
-			(uuid "16b45ce2-7376-4ef1-85b7-dc8b1dbacbe7")
-		)
-		(instances
-			(project "LightUpArrowHead"
-				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
-					(reference "D14")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_US")
-		(at 167.64 109.22 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6fb7e662-1d80-49a2-ba5b-49a1dcf10036")
-		(property "Reference" "R4"
-			(at 170.18 107.9499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "R_US"
-			(at 170.18 110.4899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 166.624 108.966 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 167.64 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, US symbol"
-			(at 167.64 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "96be4919-5489-4a95-93fe-30c1b8436047")
-		)
-		(pin "1"
-			(uuid "86d24809-2b1e-4719-90df-68f85b77b0c7")
-		)
-		(instances
-			(project "LightUpArrowHead"
-				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
-					(reference "R4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GNDREF")
-		(at 91.44 91.44 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "73aafe44-789c-4653-ba48-3d6a35dd801f")
-		(property "Reference" "#PWR03"
-			(at 91.44 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 91.44 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 91.44 91.44 0)
+		(property "Footprint" "Fiducial:Fiducial_1mm_Mask3mm"
+			(at 30.48 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3077,7 +3945,242 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 91.44 91.44 0)
+			(at 30.48 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 30.48 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project ""
+				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
+					(reference "FID1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Prototype Schematic Symbols - Light Up Arrow:Edge Plating 3mm")
+		(at 48.26 106.68 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5e7abb7a-eee0-41ab-9c89-54765375bbc2")
+		(property "Reference" "J2"
+			(at 44.45 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Edge Connector"
+			(at 48.26 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Prototype Footprint - Light Up Arrow:Edge Plating 3mm"
+			(at 48.26 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 48.26 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 1x1"
+			(at 48.26 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5cb440e7-d1ce-40ea-b268-02c8e790d94e")
+		)
+		(instances
+			(project ""
+				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
+					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Prototype Schematic Symbols - Light Up Arrow:Capacitor Ceramic 10uF 16V X5R 0805")
+		(at 200.66 93.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6ccdd322-a8bc-4c08-89ae-70ef461783fb")
+		(property "Reference" "C3"
+			(at 204.47 91.4399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Capacitor Ceramic 10uF 16V X5R 0805"
+			(at 204.47 95.2499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Prototype Footprint - Light Up Arrow:Capacitor 0805 (Metric 2012)"
+			(at 201.6252 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 200.66 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 200.66 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 200.66 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "CL21A106KOQNNNG"
+			(at 200.66 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Capacitance" "10uF"
+			(at 204.47 93.9799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "16V"
+			(at 204.47 96.5199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "acdf8d0c-1e6b-4fdf-b2fb-0a72adffdcde")
+		)
+		(pin "2"
+			(uuid "80ba9c0c-4da4-4baf-8afe-be435a283b73")
+		)
+		(instances
+			(project ""
+				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
+					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GNDREF")
+		(at 106.68 127 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "73aafe44-789c-4653-ba48-3d6a35dd801f")
+		(property "Reference" "#PWR03"
+			(at 106.68 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 106.68 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 106.68 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3086,7 +4189,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDREF\" , reference supply ground"
-			(at 91.44 91.44 0)
+			(at 106.68 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3108,7 +4211,7 @@
 	)
 	(symbol
 		(lib_id "Prototype Schematic Symbols - Light Up Arrow:LED Green (525nm) 2.9V 20mA 16000mcd SMD-2")
-		(at 187.96 96.52 0)
+		(at 241.3 104.14 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3117,7 +4220,7 @@
 		(fields_autoplaced yes)
 		(uuid "77c504f6-10d3-40e4-8ff3-589b8c6cd7e8")
 		(property "Reference" "D6"
-			(at 189.865 93.98 0)
+			(at 243.205 101.6 0)
 			(do_not_autoplace yes)
 			(effects
 				(font
@@ -3127,7 +4230,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 191.77 98.1074 0)
+			(at 245.11 105.7274 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3136,8 +4239,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Vishay VLD.1232G Family LED"
-			(at 187.96 95.25 90)
+		(property "Footprint" "Prototype Footprint - Light Up Arrow:Vishay VLD.1232G Family LED - Right Angle Edge Mount (Non-Standard)"
+			(at 241.3 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3146,7 +4249,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/80003/vldb1232.pdf"
-			(at 187.96 95.25 90)
+			(at 241.3 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3155,7 +4258,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 187.96 93.98 90)
+			(at 241.3 101.6 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3164,7 +4267,7 @@
 			)
 		)
 		(property "Manufacturer" "Vishay"
-			(at 187.96 95.25 90)
+			(at 241.3 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3173,7 +4276,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "VLDTG1232G-08"
-			(at 187.96 95.25 90)
+			(at 241.3 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3182,7 +4285,7 @@
 			)
 		)
 		(property "Wavelength" "525nm"
-			(at 189.865 96.52 0)
+			(at 243.205 104.14 0)
 			(do_not_autoplace yes)
 			(effects
 				(font
@@ -3192,10 +4295,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "33f7d875-afe3-460c-bb25-09efc9af1cdb")
+			(uuid "33f7d875-afe3-460c-bb25-09efc9af1cdc")
 		)
 		(pin "2"
-			(uuid "c05ecbfd-abb2-4519-b25f-45cd9670a3ff")
+			(uuid "c05ecbfd-abb2-4519-b25f-45cd9670a400")
 		)
 		(instances
 			(project ""
@@ -3208,7 +4311,7 @@
 	)
 	(symbol
 		(lib_id "power:GNDREF")
-		(at 187.96 116.84 0)
+		(at 241.3 111.76 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3217,7 +4320,7 @@
 		(fields_autoplaced yes)
 		(uuid "7849c6ed-d23f-4783-8755-aa6f25fac54b")
 		(property "Reference" "#PWR08"
-			(at 187.96 123.19 0)
+			(at 241.3 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3226,7 +4329,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 187.96 121.92 0)
+			(at 241.3 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3234,7 +4337,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 187.96 116.84 0)
+			(at 241.3 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3243,7 +4346,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 187.96 116.84 0)
+			(at 241.3 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3252,7 +4355,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDREF\" , reference supply ground"
-			(at 187.96 116.84 0)
+			(at 241.3 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3273,27 +4376,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Prototype Schematic Symbols - Light Up Arrow:Resistor 1k 0402 1%")
-		(at 152.4 91.44 0)
+		(lib_id "Prototype Schematic Symbols - Light Up Arrow:Fiducial")
+		(at 38.1 185.42 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "79af99db-61c7-4d11-9699-809aa6ce9890")
-		(property "Reference" "R1"
-			(at 154.94 87.6299 0)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "[Resistance] [Footprint] [Tolerance]"
-			(at 153.67 99.314 0)
+		(uuid "797e0bdd-b045-42eb-b922-bcfe1003e111")
+		(property "Reference" "FID2"
+			(at 38.1 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3301,8 +4394,17 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 152.4 90.17 0)
+		(property "Value" "~"
+			(at 38.1 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Fiducial:Fiducial_1mm_Mask3mm"
+			(at 38.1 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3311,7 +4413,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 152.4 90.424 0)
+			(at 38.1 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3320,169 +4422,18 @@
 			)
 		)
 		(property "Description" ""
-			(at 152.4 90.424 0)
+			(at 38.1 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(property "Manufacturer" ""
-			(at 152.4 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" ""
-			(at 146.05 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Resistance" "?kΩ"
-			(at 154.94 90.1699 0)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Package" "0402"
-			(at 154.94 95.25 0)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Tolerance" "1%"
-			(at 154.94 92.7099 0)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Technology" "SMT"
-			(at 151.13 100.584 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "808bc9bc-987e-471e-bff3-87dec40f6688")
-		)
-		(pin "1"
-			(uuid "744a8cd4-f272-44d5-be3c-79b1c6d58955")
 		)
 		(instances
 			(project ""
 				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
-					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D")
-		(at 43.18 101.6 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "80ea443b-de97-4162-8453-fbb794c5ec60")
-		(property "Reference" "D13"
-			(at 45.72 100.3299 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "D"
-			(at 45.72 102.8699 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SMA"
-			(at 43.18 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 43.18 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Diode"
-			(at 43.18 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 43.18 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 43.18 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9ae49ebf-1284-4af3-be84-637352e5326b")
-		)
-		(pin "2"
-			(uuid "f7c1544a-979c-43ac-a22d-310639f036e8")
-		)
-		(instances
-			(project ""
-				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
-					(reference "D13")
+					(reference "FID2")
 					(unit 1)
 				)
 			)
@@ -3490,7 +4441,7 @@
 	)
 	(symbol
 		(lib_id "Prototype Schematic Symbols - Light Up Arrow:Capacitor EDLC 5F 5.5V Diameter=26mm Height=7mm Axial Can THT")
-		(at 91.44 86.36 0)
+		(at 106.68 104.14 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3499,7 +4450,7 @@
 		(fields_autoplaced yes)
 		(uuid "89506772-3285-4510-97d5-521583270f42")
 		(property "Reference" "C1"
-			(at 93.98 83.82 0)
+			(at 109.22 101.6 0)
 			(do_not_autoplace yes)
 			(effects
 				(font
@@ -3509,7 +4460,7 @@
 			)
 		)
 		(property "Value" "Capacitor EDLC 5F 5.5V Diameter=26mm Height=7mm Axial Can THT"
-			(at 91.694 88.392 0)
+			(at 106.934 106.172 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3519,7 +4470,7 @@
 			)
 		)
 		(property "Footprint" "Prototype Footprint - Light Up Arrow:Capacitor EDLC CDA CE Series H-Type Edge Mount"
-			(at 91.44 86.36 0)
+			(at 106.68 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3528,7 +4479,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 91.44 86.36 0)
+			(at 106.68 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3537,7 +4488,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small US symbol"
-			(at 91.44 86.36 0)
+			(at 106.68 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3546,7 +4497,7 @@
 			)
 		)
 		(property "Manufacturer" "CDA (Zhifengwei Technology)"
-			(at 91.44 86.36 0)
+			(at 106.68 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3555,7 +4506,7 @@
 			)
 		)
 		(property "MPN" "CE5R5505HF-ZJ"
-			(at 91.44 86.36 0)
+			(at 106.68 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3564,7 +4515,7 @@
 			)
 		)
 		(property "Technology" "Handplace"
-			(at 91.44 86.36 0)
+			(at 106.68 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3573,7 +4524,7 @@
 			)
 		)
 		(property "Capacitance" "5F"
-			(at 93.98 86.36 0)
+			(at 109.22 104.14 0)
 			(do_not_autoplace yes)
 			(effects
 				(font
@@ -3583,7 +4534,7 @@
 			)
 		)
 		(property "Voltage" "5.5V"
-			(at 93.98 88.9 0)
+			(at 109.22 106.68 0)
 			(do_not_autoplace yes)
 			(effects
 				(font
@@ -3608,35 +4559,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D")
-		(at 53.34 83.82 270)
+		(lib_id "Prototype Schematic Symbols - Light Up Arrow:Fiducial")
+		(at 38.1 193.04 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "94950b6e-823c-481d-a2a2-dcb0b92dcffe")
-		(property "Reference" "D15"
-			(at 55.88 82.5499 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "D"
-			(at 55.88 85.0899 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SMA"
-			(at 53.34 83.82 0)
+		(uuid "9e4db548-f976-4794-842d-eaf42fa96ac3")
+		(property "Reference" "FID4"
+			(at 38.1 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3644,8 +4577,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 53.34 83.82 0)
+		(property "Value" "~"
+			(at 38.1 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3653,8 +4586,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Diode"
-			(at 53.34 83.82 0)
+		(property "Footprint" "Fiducial:Fiducial_1mm_Mask3mm"
+			(at 38.1 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3662,8 +4595,8 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 53.34 83.82 0)
+		(property "Datasheet" ""
+			(at 38.1 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3671,95 +4604,19 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 53.34 83.82 0)
+		(property "Description" ""
+			(at 38.1 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(pin "1"
-			(uuid "3012396b-d6ad-492e-b984-ddee5dc9ebc8")
-		)
-		(pin "2"
-			(uuid "2e5a3a7d-5d8c-4dbd-b646-295b6a357cb9")
 		)
 		(instances
 			(project "LightUpArrowHead"
 				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
-					(reference "D15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_US")
-		(at 177.8 109.22 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a151a3dc-5652-4394-bffc-e3b50389c00f")
-		(property "Reference" "R5"
-			(at 180.34 107.9499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "R_US"
-			(at 180.34 110.4899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 176.784 108.966 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 177.8 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, US symbol"
-			(at 177.8 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "c151c605-9572-4024-b475-2fbbb07bf005")
-		)
-		(pin "1"
-			(uuid "f3d7172a-6384-4ecf-85e0-84fa4c22e45c")
-		)
-		(instances
-			(project "LightUpArrowHead"
-				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
-					(reference "R5")
+					(reference "FID4")
 					(unit 1)
 				)
 			)
@@ -3767,7 +4624,7 @@
 	)
 	(symbol
 		(lib_id "Prototype Schematic Symbols - Light Up Arrow:LED Green (525nm) 2.9V 20mA 16000mcd SMD-2")
-		(at 187.96 86.36 0)
+		(at 241.3 93.98 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3775,8 +4632,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a7eb5afd-e63a-4270-a8a3-11f7ae276ba3")
-		(property "Reference" "D3"
-			(at 189.865 83.82 0)
+		(property "Reference" "D5"
+			(at 243.205 91.44 0)
 			(do_not_autoplace yes)
 			(effects
 				(font
@@ -3786,7 +4643,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 191.77 87.9474 0)
+			(at 245.11 95.5674 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3796,7 +4653,7 @@
 			)
 		)
 		(property "Footprint" "Prototype Footprint - Light Up Arrow:Vishay VLD.1232G Family LED - Right Angle Edge Mount (Non-Standard)"
-			(at 187.96 85.09 90)
+			(at 241.3 92.71 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3805,7 +4662,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/80003/vldb1232.pdf"
-			(at 187.96 85.09 90)
+			(at 241.3 92.71 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3814,7 +4671,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 187.96 83.82 90)
+			(at 241.3 91.44 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3823,7 +4680,7 @@
 			)
 		)
 		(property "Manufacturer" "Vishay"
-			(at 187.96 85.09 90)
+			(at 241.3 92.71 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3832,7 +4689,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "VLDTG1232G-08"
-			(at 187.96 85.09 90)
+			(at 241.3 92.71 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3841,7 +4698,7 @@
 			)
 		)
 		(property "Wavelength" "525nm"
-			(at 189.865 86.36 0)
+			(at 243.205 93.98 0)
 			(do_not_autoplace yes)
 			(effects
 				(font
@@ -3859,42 +4716,24 @@
 		(instances
 			(project "LightUpArrowHead"
 				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
-					(reference "D3")
+					(reference "D5")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:D")
-		(at 53.34 101.6 270)
+		(lib_id "power:GNDREF")
+		(at 127 101.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "ce151195-e705-4164-ae6d-305a9081814d")
-		(property "Reference" "D16"
-			(at 55.88 100.3299 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "D"
-			(at 55.88 102.8699 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SMA"
-			(at 53.34 101.6 0)
+		(uuid "aa0a2400-3431-4342-9e22-43c3e261b012")
+		(property "Reference" "#PWR011"
+			(at 127 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3902,8 +4741,16 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 53.34 101.6 0)
+		(property "Value" "GND"
+			(at 127 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 127 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3911,8 +4758,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Diode"
-			(at 53.34 101.6 0)
+		(property "Datasheet" ""
+			(at 127 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3920,17 +4767,8 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 53.34 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 53.34 101.6 0)
+		(property "Description" "Power symbol creates a global label with name \"GNDREF\" , reference supply ground"
+			(at 127 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3939,15 +4777,184 @@
 			)
 		)
 		(pin "1"
-			(uuid "4127095d-2bc8-4a74-97ae-031fc14ce315")
-		)
-		(pin "2"
-			(uuid "0eec42e5-b0fe-46a1-a25d-25b90109bbda")
+			(uuid "9f0d4190-b130-4958-9ff3-73af945dcfe7")
 		)
 		(instances
 			(project "LightUpArrowHead"
 				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
-					(reference "D16")
+					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Prototype Schematic Symbols - Light Up Arrow:MOSFET P-Channel 30V 3.8A SOT-23-3")
+		(at 66.04 96.52 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b12fb96a-7edf-4253-ac13-3ea9d2a061d7")
+		(property "Reference" "Q1"
+			(at 60.96 92.7099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DMP3099L"
+			(at 60.96 95.2499 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 67.945 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMP3099L.pdf"
+			(at 69.85 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "-3.8A Id, -30V Vds, P-Channel MOSFET, SOT-23"
+			(at 66.04 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dc84ef2a-6fbd-454e-8f11-d0b9ed2d41d2")
+		)
+		(pin "2"
+			(uuid "d19680f7-d6a3-4baf-822f-a533e0758296")
+		)
+		(pin "3"
+			(uuid "cd38ed87-bbb4-45f3-bfeb-111dbff57265")
+		)
+		(instances
+			(project ""
+				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Prototype Schematic Symbols - Light Up Arrow:MOSFET N-Channel 30V 3.6A SOT-23-3")
+		(at 66.04 116.84 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b8e4b6f6-ecc6-42f9-a401-3b9f64f135e7")
+		(property "Reference" "Q3"
+			(at 59.69 115.5699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MOSFET N-Channel 30V 3.6A SOT-23-3"
+			(at 60.96 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 60.96 118.745 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "3.6A Id, 30V Vds, N-Channel MOSFET, SOT-23"
+			(at 66.04 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Diodes"
+			(at 66.04 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "DMG3406L"
+			(at 59.69 118.1099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "461ef779-7ac7-4497-b7d1-178010e13a9a")
+		)
+		(pin "3"
+			(uuid "88d5b992-f4da-483b-b51a-aacf84face1a")
+		)
+		(pin "2"
+			(uuid "aa8b1f5f-011c-461d-b0b2-7c152528689c")
+		)
+		(instances
+			(project ""
+				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
+					(reference "Q3")
 					(unit 1)
 				)
 			)
@@ -3955,7 +4962,7 @@
 	)
 	(symbol
 		(lib_id "Prototype Schematic Symbols - Light Up Arrow:LED Green (525nm) 2.9V 20mA 16000mcd SMD-2")
-		(at 177.8 86.36 0)
+		(at 231.14 93.98 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3963,8 +4970,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d8716f77-4166-4b8a-b6cc-5993e99b4751")
-		(property "Reference" "D2"
-			(at 179.705 83.82 0)
+		(property "Reference" "D4"
+			(at 233.045 91.44 0)
 			(do_not_autoplace yes)
 			(effects
 				(font
@@ -3974,7 +4981,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 181.61 87.9474 0)
+			(at 234.95 95.5674 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3984,7 +4991,7 @@
 			)
 		)
 		(property "Footprint" "Prototype Footprint - Light Up Arrow:Vishay VLD.1232G Family LED - Right Angle Edge Mount (Non-Standard)"
-			(at 177.8 85.09 90)
+			(at 231.14 92.71 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3993,7 +5000,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/80003/vldb1232.pdf"
-			(at 177.8 85.09 90)
+			(at 231.14 92.71 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4002,7 +5009,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 177.8 83.82 90)
+			(at 231.14 91.44 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4011,7 +5018,7 @@
 			)
 		)
 		(property "Manufacturer" "Vishay"
-			(at 177.8 85.09 90)
+			(at 231.14 92.71 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4020,7 +5027,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "VLDTG1232G-08"
-			(at 177.8 85.09 90)
+			(at 231.14 92.71 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4029,7 +5036,7 @@
 			)
 		)
 		(property "Wavelength" "525nm"
-			(at 179.705 86.36 0)
+			(at 233.045 93.98 0)
 			(do_not_autoplace yes)
 			(effects
 				(font
@@ -4047,7 +5054,7 @@
 		(instances
 			(project "LightUpArrowHead"
 				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
-					(reference "D2")
+					(reference "D4")
 					(unit 1)
 				)
 			)
@@ -4055,7 +5062,7 @@
 	)
 	(symbol
 		(lib_id "power:GNDREF")
-		(at 177.8 116.84 0)
+		(at 231.14 111.76 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4064,7 +5071,7 @@
 		(fields_autoplaced yes)
 		(uuid "d9a85fec-bfe4-4269-a5fe-26c96085eefc")
 		(property "Reference" "#PWR07"
-			(at 177.8 123.19 0)
+			(at 231.14 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4073,7 +5080,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 177.8 121.92 0)
+			(at 231.14 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4081,7 +5088,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 177.8 116.84 0)
+			(at 231.14 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4090,7 +5097,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 177.8 116.84 0)
+			(at 231.14 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4099,7 +5106,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDREF\" , reference supply ground"
-			(at 177.8 116.84 0)
+			(at 231.14 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4120,17 +5127,17 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GNDREF")
-		(at 167.64 116.84 0)
+		(lib_id "Prototype Schematic Symbols - Light Up Arrow:Fiducial")
+		(at 30.48 193.04 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "ef39d91c-3f33-42e5-ab72-8bbead54d1d2")
-		(property "Reference" "#PWR06"
-			(at 167.64 123.19 0)
+		(uuid "e78287ae-eece-4a51-a9b7-a4ce7655326a")
+		(property "Reference" "FID3"
+			(at 30.48 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4138,16 +5145,17 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 167.64 121.92 0)
+		(property "Value" "~"
+			(at 30.48 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
-		(property "Footprint" ""
-			(at 167.64 116.84 0)
+		(property "Footprint" "Fiducial:Fiducial_1mm_Mask3mm"
+			(at 30.48 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4156,7 +5164,70 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 167.64 116.84 0)
+			(at 30.48 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 30.48 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "LightUpArrowHead"
+				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
+					(reference "FID3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GNDREF")
+		(at 220.98 111.76 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ef39d91c-3f33-42e5-ab72-8bbead54d1d2")
+		(property "Reference" "#PWR06"
+			(at 220.98 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 220.98 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 220.98 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 220.98 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4165,7 +5236,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDREF\" , reference supply ground"
-			(at 167.64 116.84 0)
+			(at 220.98 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4186,8 +5257,103 @@
 		)
 	)
 	(symbol
+		(lib_id "Prototype Schematic Symbols - Light Up Arrow:MOSFET N-Channel 30V 3.6A SOT-23-3")
+		(at 86.36 116.84 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "efe4f33f-6baf-4f06-bb80-a7c3384248e9")
+		(property "Reference" "Q4"
+			(at 92.71 115.5699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MOSFET N-Channel 30V 3.6A SOT-23-3"
+			(at 91.44 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 91.44 118.745 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "3.6A Id, 30V Vds, N-Channel MOSFET, SOT-23"
+			(at 86.36 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Diodes"
+			(at 86.36 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "DMG3406L"
+			(at 92.71 118.1099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "461ef779-7ac7-4497-b7d1-178010e13a9b")
+		)
+		(pin "3"
+			(uuid "88d5b992-f4da-483b-b51a-aacf84face1b")
+		)
+		(pin "2"
+			(uuid "aa8b1f5f-011c-461d-b0b2-7c152528689d")
+		)
+		(instances
+			(project ""
+				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
+					(reference "Q4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GNDREF")
-		(at 121.92 99.06 0)
+		(at 154.94 106.68 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4196,7 +5362,7 @@
 		(fields_autoplaced yes)
 		(uuid "f24c7f00-a225-4155-a1ae-9fabe4663613")
 		(property "Reference" "#PWR04"
-			(at 121.92 105.41 0)
+			(at 154.94 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4205,7 +5371,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 121.92 104.14 0)
+			(at 154.94 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4213,7 +5379,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 121.92 99.06 0)
+			(at 154.94 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4222,7 +5388,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 121.92 99.06 0)
+			(at 154.94 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4231,7 +5397,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDREF\" , reference supply ground"
-			(at 121.92 99.06 0)
+			(at 154.94 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4253,7 +5419,7 @@
 	)
 	(symbol
 		(lib_id "Prototype Schematic Symbols - Light Up Arrow:Inductor 1uH 3.3A 1008")
-		(at 114.3 78.74 0)
+		(at 147.32 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4261,7 +5427,7 @@
 		(dnp no)
 		(uuid "f6ca875f-92ee-4b33-a004-fa798f937ef5")
 		(property "Reference" "L1"
-			(at 109.855 77.47 0)
+			(at 142.875 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4269,7 +5435,7 @@
 			)
 		)
 		(property "Value" "Inductor 1uH"
-			(at 118.11 77.47 0)
+			(at 151.13 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4278,7 +5444,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_1008_2520Metric"
-			(at 114.3 78.74 90)
+			(at 147.32 86.36 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4287,7 +5453,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 114.3 78.74 90)
+			(at 147.32 86.36 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4296,7 +5462,7 @@
 			)
 		)
 		(property "Description" "Inductor"
-			(at 114.3 78.74 90)
+			(at 147.32 86.36 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4305,7 +5471,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "WIP252012S-1R0MLDG"
-			(at 114.3 78.74 0)
+			(at 147.32 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4314,7 +5480,7 @@
 			)
 		)
 		(property "Manufacturer" "INPAQ Technology"
-			(at 114.3 78.74 0)
+			(at 147.32 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4323,7 +5489,7 @@
 			)
 		)
 		(property "Inductance" "1uH"
-			(at 118.745 77.47 0)
+			(at 151.765 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4331,7 +5497,7 @@
 			)
 		)
 		(property "Current Max" "3.3A"
-			(at 114.935 80.01 0)
+			(at 147.955 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4355,7 +5521,7 @@
 	)
 	(symbol
 		(lib_id "Prototype Schematic Symbols - Light Up Arrow:LED Green (525nm) 2.9V 20mA 16000mcd SMD-2")
-		(at 177.8 96.52 0)
+		(at 231.14 104.14 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4363,8 +5529,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f776a8de-6b59-4992-8610-6897972e8408")
-		(property "Reference" "D5"
-			(at 179.705 93.98 0)
+		(property "Reference" "D3"
+			(at 233.045 101.6 0)
 			(do_not_autoplace yes)
 			(effects
 				(font
@@ -4374,7 +5540,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 181.61 98.1074 0)
+			(at 234.95 105.7274 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4384,7 +5550,7 @@
 			)
 		)
 		(property "Footprint" "Prototype Footprint - Light Up Arrow:Vishay VLD.1232G Family LED - Right Angle Edge Mount (Non-Standard)"
-			(at 177.8 95.25 90)
+			(at 231.14 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4393,7 +5559,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/80003/vldb1232.pdf"
-			(at 177.8 95.25 90)
+			(at 231.14 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4402,7 +5568,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 177.8 93.98 90)
+			(at 231.14 101.6 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4411,7 +5577,7 @@
 			)
 		)
 		(property "Manufacturer" "Vishay"
-			(at 177.8 95.25 90)
+			(at 231.14 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4420,7 +5586,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "VLDTG1232G-08"
-			(at 177.8 95.25 90)
+			(at 231.14 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4429,7 +5595,7 @@
 			)
 		)
 		(property "Wavelength" "525nm"
-			(at 179.705 96.52 0)
+			(at 233.045 104.14 0)
 			(do_not_autoplace yes)
 			(effects
 				(font
@@ -4447,73 +5613,7 @@
 		(instances
 			(project "LightUpArrowHead"
 				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
-					(reference "D5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x01")
-		(at 27.94 91.44 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "fb81b970-3f3d-4820-82d6-e03f57c5418a")
-		(property "Reference" "J1"
-			(at 25.4 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_01x01"
-			(at 27.94 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded"
-			(at 27.94 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 27.94 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 27.94 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "cf6492ef-bdbd-4df8-86c8-2273b60504eb")
-		)
-		(instances
-			(project "LightUpArrowHead"
-				(path "/ba64b5b1-84b3-4b20-8da3-64d65ab70f4b"
-					(reference "J1")
+					(reference "D3")
 					(unit 1)
 				)
 			)
