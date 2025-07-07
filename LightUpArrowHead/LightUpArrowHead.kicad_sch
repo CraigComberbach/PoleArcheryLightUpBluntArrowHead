@@ -3935,7 +3935,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Fiducial:Fiducial_1mm_Mask3mm"
+		(property "Footprint" "Prototype Footprint - Light Up Arrow:Fiducial 1mm by 3mm"
 			(at 30.48 185.42 0)
 			(effects
 				(font
@@ -4403,7 +4403,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Fiducial:Fiducial_1mm_Mask3mm"
+		(property "Footprint" "Prototype Footprint - Light Up Arrow:Fiducial 1mm by 3mm"
 			(at 38.1 185.42 0)
 			(effects
 				(font
@@ -4586,7 +4586,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Fiducial:Fiducial_1mm_Mask3mm"
+		(property "Footprint" "Prototype Footprint - Light Up Arrow:Fiducial 1mm by 3mm"
 			(at 38.1 193.04 0)
 			(effects
 				(font
@@ -5154,7 +5154,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Fiducial:Fiducial_1mm_Mask3mm"
+		(property "Footprint" "Prototype Footprint - Light Up Arrow:Fiducial 1mm by 3mm"
 			(at 30.48 193.04 0)
 			(effects
 				(font
