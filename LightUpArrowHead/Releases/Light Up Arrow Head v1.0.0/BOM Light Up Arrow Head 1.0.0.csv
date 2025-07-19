@@ -1,0 +1,9 @@
+Reference,Value,Qty,MPN,Manufacturer,Technology
+C1,Capacitor EDLC 5F 5.5V Diameter=26mm Height=7mm Axial Can THT,1,CE5R5505HF-ZJ,CDA (Zhifengwei Technology),Handplace
+"D1,D2,D3,D4,D5,D6",LED Green (525nm) 2.9V 20mA 16000mcd SMD-2,6,VLDTG1232G-08,Vishay,Handplace
+"Q3,Q4",MOSFET N-Channel 30V 3.6A SOT-23-3,2,DMG3406L,Diodes,SMT
+"Q1,Q2",DMP3099L,2,DMP3099L,Diodes,SMT
+L1,Inductor 1uH 3.3A 1008,1,WIP252012S-1R0MLDG,INPAQ Technology,SMT
+"C2,C3",Capacitor Ceramic 10uF 16V X5R 0805,2,CL21A106KOQNNNG,Samsung Electro-Mechanics,SMT
+R1,Resistor 3.01k 0603 1%,1,RMCF0603FT3K01,Stack Pole,SMT
+U1,Regulator SMPS Boost Vin=0.5-5.5V Vout=1.8-5.5V 3MHz,1,TPS61299-Q1,Texas Instruments,SMT
